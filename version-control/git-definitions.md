@@ -1,6 +1,6 @@
 # Git Definitions
 
-**Instructions: ** Define each of the following Git concepts.
+Define each of the following Git concepts.
 
 * What is version control?  Why is it useful?
   * Version control is a system for managing the entire history of revisions to one or more files, by one or many contributors. It is useful because it allows for many people to work concurrently on the same project in a streamlined and safe way, and provides a record of the files as they change over time that can be accessed in order to track down specific changes.
@@ -13,3 +13,5 @@
 
 * What is a merge conflict?
   * A merge conflict usually occurs when changes to the exact same line are made in two seperate branches that are being merged, or a file is deleted that the another person is trying to edit.
+
+—AK

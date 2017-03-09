@@ -9,7 +9,7 @@ Define each of the following Git concepts.
   * A branch is a copy of the files in a git repository as they exist either on a master branch, or another branch at a specific point in time. You create a new branch when you want to make changes to the master or another specified branch that you will then merge back in when you are finished.
   
 * What is a commit? What makes a good commit message?
-  * A commit represents a specific change to a file or group of files that you can access later as "save points" in the branch's git history. A good commit message is succinct and describes precisely what change is.
+  * A commit represents a specific change to a file or group of files that you can access later as "save points" in the branch's git history. A good commit message is succinct and describes precisely what the change is.
 
 * What is a merge conflict?
   * A merge conflict usually occurs when changes to the exact same line are made in two seperate branches that are being merged, or a file is deleted that the another person is trying to edit.

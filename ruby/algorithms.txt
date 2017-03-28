@@ -1,0 +1,23 @@
+Elevator Algorithm
+
+- Take in two parameters: (up-or-down, desired_floor)
+    - If the elevator door is open:
+        - Enter the elevator.
+    - If the elevator door is closed:
+        - Look at elevator call buttons adjacent to the elevator door:
+            - If up-or-down is up:
+                - Press the up arrow.
+            - If up-or-down is down:
+                - Press the down arrow.
+        - If elevator doors open:
+            - Enter the elevator.
+    - Once inside the elevator, find the elevator control panel adjacent to the door on the inside of the elevator:
+        - For each button:
+            - If Button Number contains star character, Button Number = (Button Number - star character).
+            - Floor Number = Button Number
+        - For each button:
+            - If Floor Number == desired_floor
+                - Press the button.
+            - Otherwise:
+                - Say "Sorry, that floor doesn't exist!".
+    - When elevator doors open, exit the elevator.

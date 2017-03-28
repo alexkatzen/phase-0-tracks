@@ -1,3 +1,50 @@
 body {
-  background-color: yellow;
+  width: 100%;
+}
+
+a {
+  color: #ff00ff;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+header {
+  height: 200px;
+  background: url("https://assets-cdn.github.com/images/modules/open_graph/github-octocat.png");
+  background-size: 50%;
+}
+
+footer {
+  height: 200px;
+  clear:both;
+}
+
+.column-1 {
+  width:45%;
+  background: linear-gradient(blue, rgba(255, 244, 222, .7));
+/*   border: 1px solid red; */
+  padding-right: 40px;
+  position: relative;
+  float: left;
+}
+.column-2 {
+  width:45%;
+  background: linear-gradient(white, rgba(255, 244, 222, .7));
+  position: relative;
+  float: left;
+}
+
+::selection {
+  background: red;
+}
+
+@media (min-width: 700px) {
+  footer { 
+  background: -webkit-linear-gradient(blue, rgba(255, 244, 222, .7));
+  background: -moz-linear-gradient(blue, rgba(255, 244, 222, .7));
+  background: -o-linear-gradient(blue, rgba(255, 244, 222, .7));
+  background: linear-gradient(blue, rgba(255, 244, 222, .7)); 
+  }
 }

@@ -2,7 +2,7 @@ puts "How many employees are we evaluating today?"
 number_of_employees = gets.chomp.to_i
 
 def vampire_survey 
-  vampire_evaluation = "(results inconclusive)"
+  vampire_evaluation = "[results inconclusive]"
   wrong_age = false
 
   puts "Welcome to Werewolf Inc."
@@ -40,7 +40,7 @@ def vampire_survey
   # Did the employee give the wrong age, turn down garlic bread, _AND_ waive health insurance?
   # If so: "Almost certainly a vampire.”
   if wrong_age && employee_wants_garlic == "n" && employee_wants_health_insurance == "n"
-    vampire_evaluation = "plmost certainly a vampire."
+    vampire_evaluation = "almost certainly a vampire."
   end
 
   # Is the employee's name "Drake Cula" _OR_ “Tu Fang”?

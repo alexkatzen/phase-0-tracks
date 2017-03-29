@@ -1,7 +1,7 @@
 puts "How many employees are we evaluating today?"
 number_of_employees = gets.chomp.to_i
 
-def vampire_evaluation 
+def vampire_survey 
   puts "Welcome to Werewolf Inc."
   puts ""
   puts "What is your name?"
@@ -52,5 +52,5 @@ def vampire_evaluation
 end
 
 number_of_employees.times do 
-  vampire_evaluation
+  vampire_survey
 end

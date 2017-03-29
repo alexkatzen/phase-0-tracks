@@ -2,6 +2,9 @@ puts "How many employees are we evaluating today?"
 number_of_employees = gets.chomp.to_i
 
 def vampire_survey 
+  vampire_evaluation = "(Results inconclusive)"
+  wrong_age = false
+
   puts "Welcome to Werewolf Inc."
   puts ""
   puts "What is your name?"
@@ -19,8 +22,6 @@ def vampire_survey
   puts "Would you like to enroll in the company’s health insurance? (y/n?)"
   employee_wants_health_insurance = gets.chomp.downcase
 
-  vampire_evaluation = "(Results inconclusive)"
-  wrong_age = false
 
   # Did the employee give the correct age (Does birth year and the given age line up?)
   # If so: “Probably not a vampire.”
@@ -48,9 +49,36 @@ def vampire_survey
     vampire_evaluation = "definitely a vampire."
   end
 
+
+  # Use a loop to ask the employee to name allergies 1 at a time. 
+  # If at any point the employee lists "sunshine" as an allergy, 
+  # skip directly to vampire_evaluation = "Probably a vampire". 
+  # When the employee types 'done', exit the loop.
+  puts "Do you have any allergies (y/n?)"
+  take_allergy_survey = gets.chomp.downcase
+
+  if take_allergy_survey == "y"
+    puts "Please provide your allergies. Hit \'Enter\' after each allergy and type \'done\' when finished."
+  end
+  while take_allergy_survey == "y"
+    puts "My allergy is:"
+    allergy = gets.chomp.downcase
+    if allergy == "sunshine"
+      vampire_evaluation = "probably a vampire."
+      take_allergy_survey = nil
+      puts "Sunshine?! Thanks, that's all we need to know. This concludes the allergies portion of the survey."
+    end 
+    if allergy == 'done'
+      take_allergy_survey = nil
+    end
+  end
+
   puts "Evaluation: #{employee_name} is " + vampire_evaluation
+
 end
 
 number_of_employees.times do 
   vampire_survey
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."

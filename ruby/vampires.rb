@@ -77,8 +77,10 @@ def vampire_survey
 
 end
 
-number_of_employees.times do 
+while number_of_employees > 0
   vampire_survey
+  number_of_employees -= 1
 end
+
 puts ""
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."

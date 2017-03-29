@@ -80,5 +80,5 @@ end
 number_of_employees.times do 
   vampire_survey
 end
-
+puts ""
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."

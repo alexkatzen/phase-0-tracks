@@ -25,10 +25,10 @@ def vampire_survey
 
   # Did the employee give the correct age (Does birth year and the given age line up?)
   # If so: “Probably not a vampire.”
-  if employee_birthyear == 2017 - employee_age
-    vampire_evaluation = "probably not a vampire."
-  else 
+  if employee_birthyear != 2017 - employee_age
     wrong_age = true
+  else 
+    vampire_evaluation = "probably not a vampire."
   end
 
   # Did the employee give the wrong age, turn down garlic bread, _OR_ waive health insurance?
@@ -77,8 +77,10 @@ def vampire_survey
 
 end
 
-number_of_employees.times do 
+while number_of_employees > 0
   vampire_survey
+  number_of_employees -= 1
 end
+
 puts ""
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."

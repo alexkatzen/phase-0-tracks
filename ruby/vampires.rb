@@ -2,7 +2,7 @@ puts "How many employees are we evaluating today?"
 number_of_employees = gets.chomp.to_i
 
 def vampire_survey 
-  vampire_evaluation = "(Results inconclusive)"
+  vampire_evaluation = "(results inconclusive)"
   wrong_age = false
 
   puts "Welcome to Werewolf Inc."

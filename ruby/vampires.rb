@@ -40,8 +40,8 @@ end
 
 # Is the employee's name "Drake Cula" _OR_ “Tu Fang”?
 # If so: "Definitely a vampire"
-
-# Otherwise:
-# "Results inconclusive"
+if employee_name == "drake cula" || employee_name == "tu fang"
+  vampire_evaluation = "Definitely a vampire."
+end
 
 puts "Evaluation: " + vampire_evaluation

@@ -1,5 +1,5 @@
 puts "Welcome to Werewolf Inc."
-
+puts ""
 puts "What is your name?"
 employee_name = gets.chomp.downcase
 
@@ -34,6 +34,9 @@ end
 
 # Did the employee give the wrong age, turn down garlic bread, _AND_ waive health insurance?
 # If so: "Almost certainly a vampire.”
+if wrong_age && employee_wants_garlic == "n" && employee_wants_health_insurance == "n"
+  vampire_evaluation = "Almost certainly a vampire."
+end
 
 # Is the employee's name "Drake Cula" _OR_ “Tu Fang”?
 # If so: "Definitely a vampire"
@@ -41,4 +44,4 @@ end
 # Otherwise:
 # "Results inconclusive"
 
-puts vampire_evaluation
+puts "Evaluation: " + vampire_evaluation

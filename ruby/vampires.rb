@@ -1,7 +1,7 @@
 puts "How many employees are we evaluating today?"
 number_of_employees = gets.chomp.to_i
 
-# Create a function for the survey
+# Create a method for the survey
 def vampire_survey 
   vampire_evaluation = "[results inconclusive]"
   wrong_age = false

@@ -1,6 +1,7 @@
 puts "How many employees are we evaluating today?"
 number_of_employees = gets.chomp.to_i
 
+# Create a function for the survey
 def vampire_survey 
   vampire_evaluation = "[results inconclusive]"
   wrong_age = false
@@ -22,9 +23,7 @@ def vampire_survey
   puts "Would you like to enroll in the company’s health insurance? (y/n?)"
   employee_wants_health_insurance = gets.chomp.downcase
 
-
   # Did the employee give the correct age (Does birth year and the given age line up?)
-  # If so: “Probably not a vampire.”
   if employee_birthyear != 2017 - employee_age
     wrong_age = true
   else 
@@ -32,31 +31,25 @@ def vampire_survey
   end
 
   # Did the employee give the wrong age, turn down garlic bread, _OR_ waive health insurance?
-  # If so: “Probably a vampire.”
   if (wrong_age && employee_wants_garlic == "n") || employee_wants_health_insurance == "n"
     vampire_evaluation = "probably a vampire."
   end
 
   # Did the employee give the wrong age, turn down garlic bread, _AND_ waive health insurance?
-  # If so: "Almost certainly a vampire.”
   if wrong_age && employee_wants_garlic == "n" && employee_wants_health_insurance == "n"
     vampire_evaluation = "almost certainly a vampire."
   end
 
   # Is the employee's name "Drake Cula" _OR_ “Tu Fang”?
-  # If so: "Definitely a vampire"
   if employee_name.downcase == "drake cula" || employee_name.downcase == "tu fang"
     vampire_evaluation = "definitely a vampire."
   end
 
-
-  # Use a loop to ask the employee to name allergies 1 at a time. 
-  # If at any point the employee lists "sunshine" as an allergy, 
-  # skip directly to vampire_evaluation = "Probably a vampire". 
-  # When the employee types 'done', exit the loop.
+  # Ask if the employee has allergies.
   puts "Do you have any allergies (y/n?)"
   take_allergy_survey = gets.chomp.downcase
 
+  # If employee indicates allergies, ask the employee to list allergies 1 at a time. If 'sunshine' entered, skip directly "probably a vampire" evaluation
   if take_allergy_survey == "y"
     puts "Please provide your allergies. Hit \'Enter\' after each allergy and type \'done\' when finished."
   end
@@ -77,6 +70,7 @@ def vampire_survey
 
 end
 
+# Conduct the survey for each of the employees
 while number_of_employees > 0
   vampire_survey
   number_of_employees -= 1

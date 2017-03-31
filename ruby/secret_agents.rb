@@ -61,3 +61,15 @@ end
 
 # The below code works because it is decrypting the result of the encrypting method.
 # puts decrypt(encrypt("swordfish"))
+
+puts "Hello secret agent, would you like to decrypt or encrypt a password?"
+puts "type \'1\' for decrypt"
+puts "type \'2\' for encrypt"
+answer = gets.chomp
+
+if answer == "1"
+  puts "Please enter the word to decrypt"
+  word_to_decrypt = gets.chomp
+  puts "here is your decrypted word:" 
+  puts decrypt(word_to_decrypt)
+end

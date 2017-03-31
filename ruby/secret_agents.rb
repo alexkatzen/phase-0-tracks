@@ -16,7 +16,7 @@ def encrypt(string)
   return encrypted
 end
 
-puts encrypt("abcdefghijklmnopqrstuvwxyz  z")
+# puts encrypt("abcdefghijklmnopqrstuvwxyz  z")
 
 
 def decrypt(string)
@@ -62,6 +62,9 @@ end
 # The below code works because it is decrypting the result of the encrypting method.
 # puts decrypt(encrypt("swordfish"))
 
+
+# Release 5: Add an Interface
+
 puts "Hello secret agent, would you like to decrypt or encrypt a password?"
 puts "type \'1\' for decrypt"
 puts "type \'2\' for encrypt"
@@ -72,4 +75,10 @@ if answer == "1"
   word_to_decrypt = gets.chomp
   puts "here is your decrypted word:" 
   puts decrypt(word_to_decrypt)
+elsif answer == "2"
+  puts "Please enter the word to encrypt"
+  word_to_encrypt = gets.chomp
+  puts "here is your decrypted word:" 
+  puts encrypt(word_to_encrypt) 
 end
+

@@ -78,7 +78,7 @@ if answer == "1"
 elsif answer == "2"
   puts "Please enter the word to encrypt"
   word_to_encrypt = gets.chomp
-  puts "here is your decrypted word:" 
+  puts "here is your encrypted word:" 
   puts encrypt(word_to_encrypt) 
 end
 

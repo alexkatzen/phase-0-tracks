@@ -37,8 +37,11 @@ puts "the usual".insert(9, " suspects")
 
 # - - - - - - - - - -
 
-# " suspects".sub(" suspects", "the usual suspects")
+ " suspects".sub(" suspects", "the usual suspects")
 # => "the usual suspects"
+puts " A    , Bravo, Charlie".sub(" A    , Bravo, Charlie", "Alpha, Bravo, Charlie")
+
+# - - - - - - - - - -
 
 # "The case of the disappearing last letter".<???>
 # => "The case of the disappearing last lette"

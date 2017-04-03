@@ -55,8 +55,10 @@ puts "The quick brown fox jumped over the lazy dog".slice(" jumped over the lazy
 
 # - - - - - - - - - -
 
-# "Elementary,    my   dear        Watson!".<???>
+puts "Elementary,    my   dear        Watson!".squeeze
 # => "Elementary, my dear Watson!"
+puts "Ohhh Heeeeeeeeeeeeeeeeeeeeyyyyy".squeeze("e")
+
 
 # - - - - - - - - - -
 

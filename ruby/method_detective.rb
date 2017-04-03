@@ -59,7 +59,6 @@ puts "Elementary,    my   dear        Watson!".squeeze
 # => "Elementary, my dear Watson!"
 puts "Ohhh Heeeeeeeeeeeeeeeeeeeeyyyyy".squeeze("e")
 
-
 # - - - - - - - - - -
 
 puts "z".ord
@@ -72,5 +71,6 @@ puts 122.chr
 
 # - - - - - - - - - -
 
-# "How many times does the letter 'a' appear in this string?".<???>
+puts "How many times does the letter 'a' appear in this string?".count("a")
 # => 4
+puts "Ohhh Heeeeeeeeeeeeeeeeeeeeyyyyy".count("e")

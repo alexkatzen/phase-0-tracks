@@ -8,28 +8,36 @@
 # => “InVeStIgAtIoN”
 puts "THE TIME IS 5:36pm".swapcase
 
+# - - - - - - - - - -
 
 "zom".insert(1, "o")
 # => “zoom”
 puts "San Francisc".insert(-1, "o")
 
+# - - - - - - - - - -
 
 "enhance".center(15)
 # => "    enhance    "
 puts "enhance".center(15, '-')
 
+# - - - - - - - - - -
 
 "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 puts "make me loud".upcase
 
+# - - - - - - - - - -
 
 "the usual".concat(" suspects")
 #=> "the usual suspects"
 puts "Next month is ".concat("May")
 
+# another culprit:
+puts "the usual".insert(9, " suspects")
 
-# " suspects".<???>
+# - - - - - - - - - -
+
+# " suspects".sub(" suspects", "the usual suspects")
 # => "the usual suspects"
 
 # "The case of the disappearing last letter".<???>

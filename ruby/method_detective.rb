@@ -18,8 +18,11 @@ puts "San Francisc".insert(-1, "o")
 # => "    enhance    "
 puts "enhance".center(15, '-')
 
-# "Stop! You’re under arrest!".<???>
+
+"Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
+puts "make me loud".upcase
+
 
 # "the usual".<???>
 #=> "the usual suspects"

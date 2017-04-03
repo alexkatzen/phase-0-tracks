@@ -4,7 +4,8 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-# "iNvEsTiGaTiOn".<???>
+"iNvEsTiGaTiOn".swapcase
+puts "THE TIME IS 5:36pm".swapcase
 # => “InVeStIgAtIoN”
 
 # "zom".<???>

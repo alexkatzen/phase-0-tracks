@@ -49,15 +49,22 @@ puts "The Bay Areaa".chop
 
 # - - - - - - - - - -
 
-# "The mystery of the missing first letter".<???>
+puts "The mystery of the missing first letter".slice!("he mystery of the missing first letter")
 # => "he mystery of the missing first letter"
+puts "The quick brown fox jumped over the lazy dog".slice(" jumped over the lazy dog")
+
+# - - - - - - - - - -
 
 # "Elementary,    my   dear        Watson!".<???>
 # => "Elementary, my dear Watson!"
 
+# - - - - - - - - - -
+
 # "z".<???>
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
+
+# - - - - - - - - - -
 
 # "How many times does the letter 'a' appear in this string?".<???>
 # => 4

@@ -14,8 +14,9 @@ puts "THE TIME IS 5:36pm".swapcase
 puts "San Francisc".insert(-1, "o")
 
 
-# "enhance".<???>
+"enhance".center(15)
 # => "    enhance    "
+puts "enhance".center(15, '-')
 
 # "Stop! You’re under arrest!".<???>
 # => "STOP! YOU’RE UNDER ARREST!"

@@ -4,31 +4,31 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-"iNvEsTiGaTiOn".swapcase
+puts "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 puts "THE TIME IS 5:36pm".swapcase
 
 # - - - - - - - - - -
 
-"zom".insert(1, "o")
+puts "zom".insert(1, "o")
 # => “zoom”
 puts "San Francisc".insert(-1, "o")
 
 # - - - - - - - - - -
 
-"enhance".center(15)
+puts "enhance".center(15)
 # => "    enhance    "
 puts "enhance".center(15, '-')
 
 # - - - - - - - - - -
 
-"Stop! You’re under arrest!".upcase
+puts "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 puts "make me loud".upcase
 
 # - - - - - - - - - -
 
-"the usual".concat(" suspects")
+puts "the usual".concat(" suspects")
 #=> "the usual suspects"
 puts "Next month is ".concat("May")
 
@@ -37,14 +37,17 @@ puts "the usual".insert(9, " suspects")
 
 # - - - - - - - - - -
 
- " suspects".sub(" suspects", "the usual suspects")
+puts " suspects".sub(" suspects", "the usual suspects")
 # => "the usual suspects"
 puts " A    , Bravo, Charlie".sub(" A    , Bravo, Charlie", "Alpha, Bravo, Charlie")
 
 # - - - - - - - - - -
 
-# "The case of the disappearing last letter".<???>
+puts "The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
+puts "The Bay Areaa".chop
+
+# - - - - - - - - - -
 
 # "The mystery of the missing first letter".<???>
 # => "he mystery of the missing first letter"

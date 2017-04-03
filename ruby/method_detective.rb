@@ -62,9 +62,13 @@ puts "Ohhh Heeeeeeeeeeeeeeeeeeeeyyyyy".squeeze("e")
 
 # - - - - - - - - - -
 
-# "z".<???>
+puts "z".ord
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
+# 122 = integer ordinal of 'z' in the ASCII table
+# opposite method for this is 122.chr
+puts "a".ord
+puts 122.chr
 
 # - - - - - - - - - -
 

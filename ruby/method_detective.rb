@@ -24,8 +24,10 @@ puts "enhance".center(15, '-')
 puts "make me loud".upcase
 
 
-# "the usual".<???>
+"the usual".concat(" suspects")
 #=> "the usual suspects"
+puts "Next month is ".concat("May")
+
 
 # " suspects".<???>
 # => "the usual suspects"

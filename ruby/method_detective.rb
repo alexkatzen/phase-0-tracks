@@ -5,11 +5,14 @@
 # committed the crime, add additional calls to prove it.
 
 "iNvEsTiGaTiOn".swapcase
-puts "THE TIME IS 5:36pm".swapcase
 # => “InVeStIgAtIoN”
+puts "THE TIME IS 5:36pm".swapcase
 
-# "zom".<???>
+
+"zom".insert(1, "o")
 # => “zoom”
+puts "San Francisc".insert(-1, "o")
+
 
 # "enhance".<???>
 # => "    enhance    "

@@ -158,7 +158,11 @@ if answer == "y"
           while true
             puts "Please enter a room to delete. Type \'done\' if finished."
             room = gets.chomp
-            client_details[:rooms].delete(room)
+            if room == 'done'
+              break
+            else
+              client_details[:rooms].delete(room)
+            end
           end
         end
 

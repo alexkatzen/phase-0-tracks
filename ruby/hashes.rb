@@ -18,9 +18,33 @@ client_details = {
 # Each prompt should populate the corresponding key-value pair in the hash
 
   # What is the client's name?
+  puts "What is this client's name?"
+  client_details[:client_name] = gets.chomp
+  if client_details[:client_name] == ""
+    client_details[:client_name] = "(No name provided)"
+  end
+
   # What is the client's age?
+  puts "What is this client's age?"
+  client_details[:client_age] = gets.chomp.to_i
+  if client_details[:client_age] == ""
+    client_details[:client_age] = "(No age provided)"
+  end
+
   # How many children does the client have?
+  puts "How many children does the client have?"
+  client_details[:children] = gets.chomp.to_i
+  if client_details[:children] == ""
+    client_details[:children] = 0
+  end
+
   # What is the client's desired decor theme?
+  puts "What is the desired theme of the redesign?"
+  client_details[:theme] = gets.chomp
+  if client_details[:theme] == ""
+    client_details[:theme] = "(No theme provided)"
+  end
+
   # Which rooms need help?
     # Using a simple loop, populate an array of the desired rooms, one at a time
   # What is the client's top three favorite colors?
@@ -38,3 +62,5 @@ client_details = {
       # remove entered room
 
 # Print a summer of the updated client details, and exit
+
+puts client_details

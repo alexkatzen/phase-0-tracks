@@ -9,8 +9,8 @@ client_details = {
   rooms: [],
   fav_colors: {
     fav_color: nil,
-    second_color: nil,
-    third_color: nil
+    second_fav_color: nil,
+    third_fav_color: nil
   }
 }
 
@@ -22,18 +22,20 @@ def print_details(client_details)
   theme = client_details[:theme]
   rooms = client_details[:rooms].join(", ")
   fav_color = client_details[:fav_colors][:fav_color]
-  second_color = client_details[:fav_colors][:second_color]
-  third_color = client_details[:fav_colors][:third_color]
+  second_fav_color = client_details[:fav_colors][:second_fav_color]
+  third_fav_color = client_details[:fav_colors][:third_fav_color]
+  puts ""
   puts "AK Interiors: Client Details"
   puts ""
-  puts "CLIENT NAME: #{client_name}"
-  puts "CLIENT AGE: #{client_age}"
-  puts "CHILDREN: #{children}"
-  puts "THEME: #{theme}"
-  puts "ROOMS FOR REDESIGN: #{rooms}"
-  puts "FAVORITE COLOR: #{fav_color}"
-  puts "SECOND FAVORITE COLOR: #{second_color}"
-  puts "THIRD FAVORITE COLOR: #{third_color}"
+  puts "client_name: #{client_name}"
+  puts "client_age: #{client_age}"
+  puts "children: #{children}"
+  puts "theme: #{theme}"
+  puts "rooms: #{rooms}"
+  puts "fav_color: #{fav_color}"
+  puts "second_fav_color: #{second_fav_color}"
+  puts "third_fav_color: #{third_fav_color}"
+  puts ""
 end
 
 # Prompt the user for the required information, one question at a time
@@ -89,22 +91,27 @@ end
   end
 
   puts "Second favorite color?"
-  client_details[:fav_colors][:second_color] = gets.chomp.downcase
-  if client_details[:fav_colors][:second_color] == ""
-    client_details[:fav_colors][:second_color] = "(None provided)"
+  client_details[:fav_colors][:second_fav_color] = gets.chomp.downcase
+  if client_details[:fav_colors][:second_fav_color] == ""
+    client_details[:fav_colors][:second_fav_color] = "(None provided)"
   end
 
   puts "Third favorite color?"
-  client_details[:fav_colors][:third_color] = gets.chomp.downcase
-  if client_details[:fav_colors][:third_color] == ""
-    client_details[:fav_colors][:third_color] = "(None provided)"
+  client_details[:fav_colors][:third_fav_color] = gets.chomp.downcase
+  if client_details[:fav_colors][:third_fav_color] == ""
+    client_details[:fav_colors][:third_fav_color] = "(None provided)"
   end
     
 # Print a summary of the client details
 print_details(client_details)
 
-# Ask the user if there are any details they would like to update ('y'/'n')'?
+# Ask the user if there are any details they would like to update?
+puts "If you would like to update a detail, enter the LABEL of the detail, otherwise type \'none\'"
+answer = gets.chomp
+
   # If the user indicates that there are details to update, ask which detail to update
+  case answer 
+    when 
   # Ask the user for the new value
   # Set the new value at the corresponding key
   # If the user indicates they would like to update the desired rooms, ask if they would like to add or remove a room. ('add'/'remove')?

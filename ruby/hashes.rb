@@ -116,74 +116,71 @@ if answer == "y"
   # If the user indicates that there are details to update, ask which detail to update
   case answer 
     when "client_name"
-    puts "What would you like to set #{answer} to?" 
-    client_details[:client_name] = gets.chomp
+      puts "What would you like to set #{answer} to?" 
+      client_details[:client_name] = gets.chomp
 
     when "client_age"
-    puts "What would you like to set #{answer} to?" 
-    client_details[:client_age] = gets.chomp
+      puts "What would you like to set #{answer} to?" 
+      client_details[:client_age] = gets.chomp
 
     when "children"
-    puts "What would you like to set #{answer} to?" 
-    client_details[:children] = gets.chomp
+      puts "What would you like to set #{answer} to?" 
+      client_details[:children] = gets.chomp
 
     when "theme"
-    puts "What would you like to set #{answer} to?" 
-    client_details[:theme] = gets.chomp
+      puts "What would you like to set #{answer} to?" 
+      client_details[:theme] = gets.chomp
 
     when "rooms"
-    # If the user indicates they would like to update the desired rooms, 
-    # ask if they would like to add or remove a room. ('add'/'remove')?
-    puts "Type \'add'\ to add a room, or type \'remove'\ to remove a room."
-    answer = gets.chomp.downcase
+      # If the user indicates they would like to update the desired rooms, 
+      # ask if they would like to add or remove a room. ('add'/'remove')?
+      puts "Type \'add'\ to add a room, or type \'remove'\ to remove a room."
+      answer = gets.chomp.downcase
 
-    # if they respond 'add', add rooms to the hash with a loop, one at 
-    # a time until they type 'done'
-    if answer == 'add'
-      while true 
-        puts "Enter a room to redesign. Type \'done\' if finished."
-        room = gets.chomp
-        if room == 'done'
-          break
-        else
-          client_details[:rooms] << room
+      # if they respond 'add', add rooms to the hash with a loop, one at 
+      # a time until they type 'done'
+      if answer == 'add'
+        while true 
+          puts "Enter a room to redesign. Type \'done\' if finished."
+          room = gets.chomp
+          if room == 'done'
+            break
+          else
+            client_details[:rooms] << room
+          end
         end
-      end
     
-    # if they respond 'remove', print the current list of rooms, ask which room 
-    # to remove, or 'done' to quit remove entered room
-    elsif answer == 'remove'
-      puts "Current rooms:"
-      puts client_details[:rooms].join(", ")
-      while true
-        puts "Please enter a room to delete. Type \'done\' if finished."
-        room = gets.chomp
-        client_details[:rooms].delete(room)
-      end
-    end
+        # if they respond 'remove', print the current list of rooms, ask which room 
+        # to remove, or 'done' to quit remove entered room
+        elsif answer == 'remove'
+          puts "Current rooms:"
+          puts client_details[:rooms].join(", ")
+          while true
+            puts "Please enter a room to delete. Type \'done\' if finished."
+            room = gets.chomp
+            client_details[:rooms].delete(room)
+          end
+        end
 
     when "fav_color"
-    puts "What would you like to set #{answer} to?" 
-    client_details[:fav_color] = gets.chomp
+      puts "What would you like to set #{answer} to?" 
+      client_details[:fav_color] = gets.chomp
 
     when "second_fav_color"
-    puts "What would you like to set #{answer} to?" 
-    client_details[:second_fav_color] = gets.chomp
+      puts "What would you like to set #{answer} to?" 
+      client_details[:second_fav_color] = gets.chomp
 
     when "third_fav_color"
-    puts "What would you like to set #{answer} to?" 
-    client_details[:third_fav_color] = gets.chomp
+      puts "What would you like to set #{answer} to?" 
+      client_details[:third_fav_color] = gets.chomp
+    else
+      puts "Sorry, that isn't part of the client details."
   end
 else
   puts "Thank you. Goodbye!"
   exit
 end
-  # Ask the user for the new value
-  # Set the new value at the corresponding key
-  #
-    # if they respond 'add', add rooms to the hash with a loop, one at a time until they type 'done'
 
-
-# Print a summer of the updated client details, and exit
+# Print a summery of the updated client details, and exit
 print_details(client_details)
 exit

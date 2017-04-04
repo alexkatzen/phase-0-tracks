@@ -1,6 +1,18 @@
 # CLIENT DETAILS
 
 # Create an empty hash "client_details" with default values including a nested hash for "fav_colors"
+client_details = {
+  client_name: nil,
+  client_age: nil,
+  children: nil,
+  theme: nil,
+  rooms: [],
+  fav_colors: {
+    fav_color: nil,
+    second_color: nil,
+    third_color: nil
+  }
+}
 
 # Prompt the user for the required information, one question at a time
 # Each prompt should populate the corresponding key-value pair in the hash

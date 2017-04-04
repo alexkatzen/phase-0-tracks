@@ -111,7 +111,7 @@ answer = gets.chomp
 if answer == "y"
 
   puts "Please enter the label of the detail you would like to update, otherwise type \'none\'"
-  nswer = gets.chomp.downcase
+  answer = gets.chomp.downcase
 
   # If the user indicates that there are details to update, ask which detail to update
   case answer 
@@ -130,10 +130,37 @@ if answer == "y"
     when "theme"
     puts "What would you like to set #{answer} to?" 
     client_details[:theme] = gets.chomp
-    
+
     when "rooms"
-    puts "What would you like to set #{answer} to?" 
-    client_details[:rooms] = gets.chomp
+    # If the user indicates they would like to update the desired rooms, 
+    # ask if they would like to add or remove a room. ('add'/'remove')?
+    puts "Type \'add'\ to add a room, or type \'remove'\ to remove a room."
+    answer = gets.chomp.downcase
+
+    # if they respond 'add', add rooms to the hash with a loop, one at 
+    # a time until they type 'done'
+    if answer == 'add'
+      while true 
+        puts "Enter a room to redesign. Type \'done\' if finished."
+        room = gets.chomp
+        if room == 'done'
+          break
+        else
+          client_details[:rooms] << room
+        end
+      end
+    
+    # if they respond 'remove', print the current list of rooms, ask which room 
+    # to remove, or 'done' to quit remove entered room
+    elsif answer == 'remove'
+      puts "Current rooms:"
+      puts client_details[:rooms].join(", ")
+      while true
+        puts "Please enter a room to delete. Type \'done\' if finished."
+        room = gets.chomp
+        client_details[:rooms].delete(room)
+      end
+    end
 
     when "fav_color"
     puts "What would you like to set #{answer} to?" 
@@ -155,8 +182,7 @@ end
   # Set the new value at the corresponding key
   #
     # if they respond 'add', add rooms to the hash with a loop, one at a time until they type 'done'
-    # if they respond 'remove', print the current list of rooms, ask which room to remove, or 'done' to quit
-      # remove entered room
+
 
 # Print a summer of the updated client details, and exit
 print_details(client_details)

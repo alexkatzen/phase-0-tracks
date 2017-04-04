@@ -113,7 +113,7 @@ if answer == "y"
   puts "Please enter the label of the detail you would like to update, otherwise type \'none\'"
   answer = gets.chomp.downcase
 
-  # If the user indicates that there are details to update, ask which detail to update
+  # If the user indicates that there are details to update, ask which detail to update, then update.
   case answer 
     when "client_name"
       puts "What would you like to set #{answer} to?" 
@@ -175,11 +175,12 @@ if answer == "y"
       client_details[:third_fav_color] = gets.chomp
     else
       puts "Sorry, that isn't part of the client details."
-  end
+  end # end cases
+
 else
   puts "Thank you. Goodbye!"
   exit
-end
+end # end edits logic
 
 # Print a summery of the updated client details, and exit
 print_details(client_details)

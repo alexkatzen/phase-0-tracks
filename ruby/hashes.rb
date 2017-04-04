@@ -14,6 +14,28 @@ client_details = {
   }
 }
 
+# Add a method to print out the client details
+def print_details(client_details)
+  client_name = client_details[:client_name]
+  client_age = client_details[:client_age]
+  children = client_details[:children]
+  theme = client_details[:theme]
+  rooms = client_details[:rooms].join(", ")
+  fav_color = client_details[:fav_colors][:fav_color]
+  second_color = client_details[:fav_colors][:second_color]
+  third_color = client_details[:fav_colors][:third_color]
+  puts "AK Interiors: Client Details"
+  puts ""
+  puts "CLIENT NAME: #{client_name}"
+  puts "CLIENT AGE: #{client_age}"
+  puts "CHILDREN: #{children}"
+  puts "THEME: #{theme}"
+  puts "ROOMS FOR REDESIGN: #{rooms}"
+  puts "FAVORITE COLOR: #{fav_color}"
+  puts "SECOND FAVORITE COLOR: #{second_color}"
+  puts "THIRD FAVORITE COLOR: #{third_color}"
+end
+
 # Prompt the user for the required information, one question at a time
 # Each prompt should populate the corresponding key-value pair in the hash
 
@@ -78,8 +100,8 @@ client_details = {
     client_details[:fav_colors][:third_color] = "(None provided)"
   end
     
-
 # Print a summary of the client details
+print_details(client_details)
 
 # Ask the user if there are any details they would like to update ('y'/'n')'?
   # If the user indicates that there are details to update, ask which detail to update
@@ -91,5 +113,3 @@ client_details = {
       # remove entered room
 
 # Print a summer of the updated client details, and exit
-
-puts client_details

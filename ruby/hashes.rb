@@ -46,7 +46,19 @@ client_details = {
   end
 
   # Which rooms need help?
+  puts "Which rooms need our services?"
+  
     # Using a simple loop, populate an array of the desired rooms, one at a time
+    while true
+      puts "Add a room to redesign. Type \'done\' if finished."
+      room = gets.chomp.downcase
+      if room == 'done'
+        break
+      else
+        client_details[:rooms] << room
+      end
+    end
+
   # What is the client's top three favorite colors?
     # Prompt these three favorite colors one at a time, and add to the "fav_colors" hash
 

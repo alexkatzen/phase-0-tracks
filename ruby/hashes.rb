@@ -106,17 +106,58 @@ end
 print_details(client_details)
 
 # Ask the user if there are any details they would like to update?
-puts "If you would like to update a detail, enter the LABEL of the detail, otherwise type \'none\'"
-answer = gets.chomp
+puts "Would you like to make edits? (y/n)"
+answer = gets.chomp 
+if answer == "y"
+
+  puts "Please enter the label of the detail you would like to update, otherwise type \'none\'"
+  nswer = gets.chomp.downcase
 
   # If the user indicates that there are details to update, ask which detail to update
   case answer 
-    when 
+    when "client_name"
+    puts "What would you like to set #{answer} to?" 
+    client_details[:client_name] = gets.chomp
+
+    when "client_age"
+    puts "What would you like to set #{answer} to?" 
+    client_details[:client_age] = gets.chomp
+
+    when "children"
+    puts "What would you like to set #{answer} to?" 
+    client_details[:children] = gets.chomp
+
+    when "theme"
+    puts "What would you like to set #{answer} to?" 
+    client_details[:theme] = gets.chomp
+    
+    when "rooms"
+    puts "What would you like to set #{answer} to?" 
+    client_details[:rooms] = gets.chomp
+
+    when "fav_color"
+    puts "What would you like to set #{answer} to?" 
+    client_details[:fav_color] = gets.chomp
+
+    when "second_fav_color"
+    puts "What would you like to set #{answer} to?" 
+    client_details[:second_fav_color] = gets.chomp
+
+    when "third_fav_color"
+    puts "What would you like to set #{answer} to?" 
+    client_details[:third_fav_color] = gets.chomp
+  end
+else
+  puts "Thank you. Goodbye!"
+  exit
+end
   # Ask the user for the new value
   # Set the new value at the corresponding key
-  # If the user indicates they would like to update the desired rooms, ask if they would like to add or remove a room. ('add'/'remove')?
+  #
     # if they respond 'add', add rooms to the hash with a loop, one at a time until they type 'done'
     # if they respond 'remove', print the current list of rooms, ask which room to remove, or 'done' to quit
       # remove entered room
 
 # Print a summer of the updated client details, and exit
+print_details(client_details)
+exit

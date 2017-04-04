@@ -5,3 +5,11 @@ end
 
 status_message { |name1, name2| puts "#{name1} and #{name2} are working on this!!!" }
 
+grocery_list = ["eggs", "milk", "bread", "cereal"]
+
+cars = {
+  Ford: "Explorer",
+  Honda: "Accord",
+  Tesla: "S",
+  Volkswagon: "Beetle"
+}

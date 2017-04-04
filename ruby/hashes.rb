@@ -150,21 +150,22 @@ if answer == "y"
           end
         end
     
-        # if they respond 'remove', print the current list of rooms, ask which room 
-        # to remove, or 'done' to quit remove entered room
-        elsif answer == 'remove'
-          puts "Current rooms:"
-          puts client_details[:rooms].join(", ")
-          while true
-            puts "Please enter a room to delete. Type \'done\' if finished."
-            room = gets.chomp
-            if room == 'done'
-              break
-            else
-              client_details[:rooms].delete(room)
-            end
+      # if they respond 'remove', print the current list of rooms, ask which room 
+      # to remove, or 'done' to quit remove entered room
+      elsif answer == 'remove'
+        puts "Current rooms:"
+        puts client_details[:rooms].join(", ")
+        while true
+          puts "Please enter a room to delete. Type \'done\' if finished."
+          room = gets.chomp
+          if room == 'done'
+            break
+          else
+            client_details[:rooms].delete(room)
           end
         end
+
+      end # end add/remove rooms
 
     when "fav_color"
       puts "What would you like to set #{answer} to?" 

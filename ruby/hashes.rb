@@ -59,8 +59,25 @@ client_details = {
       end
     end
 
-  # What is the client's top three favorite colors?
-    # Prompt these three favorite colors one at a time, and add to the "fav_colors" hash
+  # What is the client's top three favorite colors? 
+  puts "What is the client's favorite color?"
+  client_details[:fav_colors][:fav_color] = gets.chomp.downcase
+  if client_details[:fav_colors][:fav_color] == ""
+    client_details[:fav_colors][:fav_color] = "(None provided)"
+  end
+
+  puts "Second favorite color?"
+  client_details[:fav_colors][:second_color] = gets.chomp.downcase
+  if client_details[:fav_colors][:second_color] == ""
+    client_details[:fav_colors][:second_color] = "(None provided)"
+  end
+
+  puts "Third favorite color?"
+  client_details[:fav_colors][:third_color] = gets.chomp.downcase
+  if client_details[:fav_colors][:third_color] == ""
+    client_details[:fav_colors][:third_color] = "(None provided)"
+  end
+    
 
 # Print a summary of the client details
 

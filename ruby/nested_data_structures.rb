@@ -12,7 +12,38 @@ constitution = {
   },
   
   executive_branch: {
-    administration: {},
+    administration: {
+      president: "Donald J. Trump",
+      vice_president: "Mike Pence",
+      first_lady: "Melania Trump",
+      mrs: "Karen Pence",
+      administration: {
+        secretary_of_state: "Rex W. Tillerson",
+        secretary_of_tresury: "Steven T. Mnuchin",
+        secretary_of_defense: "James Mattis",
+        attorney_general: "Jeff Sessions",
+        secretary_of_the_interior: "Ryan Zinke",
+        secretary_of_agriculture: "Sonny Perdue",
+        secretary_of_commerce: "Wilbur L. Ross, Jr.",
+        secretary_of_labor: "Alexander Acosta",
+        secretary_of_health_and_human_services: "Thomas Price",
+        secretary_of_housing_and_urban_development: "Benjamin S. Carson, Sr.",
+        secretary_of_transportation: "Elaine L. Chao",
+        secretary_of_energy: "James Richard Perry",
+        secretary_of_education: "Elisabeth Prince DeVos",
+        secretary_of_veterans_affairs: "David J. Shulkin",
+        secretary_of_homeland_security: "John F. Kelly",
+        white_house_chief_of_staff: "Reince Priebus",
+        us_trade_representative: "Robert Lighthizer",
+        director_of_national_intelligence: "Daniel Coats",
+        representative_of_the_united_states_to_the_united_nations: "Nikki R. Haley",
+        director_of_the_office_of_management_and_budget: "Mick Mulvaney",
+        director_of_the_central_intelligence_agency: "Mike Pompeo",
+        administrator_of_the_environmental_protection_agency: "Agency Scott Pruitt",
+        administrator_of_the_small_business_administration: "Linda E. McMahon"
+      }
+
+      },
     offices_of_the_president: [
       "White House Office",
       "Office Of The Vice President",

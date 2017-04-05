@@ -17,7 +17,7 @@ constitution = {
       vice_president: "Mike Pence",
       first_lady: "Melania Trump",
       mrs: "Karen Pence",
-      administration: {
+      cabinet: {
         secretary_of_state: "Rex W. Tillerson",
         secretary_of_tresury: "Steven T. Mnuchin",
         secretary_of_defense: "James Mattis",
@@ -155,7 +155,7 @@ constitution = {
       "United Statues Courts Of Appeals",
       "United States District Courts",
       "Territorial Courts",
-      "United States Court Of International Trade"
+      "United States Court Of International Trade",
       "United States Court Of Federal Claims",
       "United States Court Of Appeals For The Armed Forces",
       "United States Tax Court",
@@ -166,3 +166,5 @@ constitution = {
       ]
   }
 }
+
+p "The Secretary Of Housing And Urban Development is #{constitution[:executive_branch][:administration][:secretary_of_housing_and_urban_development]}"

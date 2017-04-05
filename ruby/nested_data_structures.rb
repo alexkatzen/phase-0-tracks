@@ -166,5 +166,22 @@ constitution = {
       ]
   }
 }
-
-p "The Secretary Of Housing And Urban Development is #{constitution[:executive_branch][:administration][:secretary_of_housing_and_urban_development]}"
+puts "___"
+puts "The current US President is (╯°□°)╯︵ ┻━┻ #{constitution[:executive_branch][:administration][:president].reverse}"
+puts ""
+puts "___"
+puts "The president's cabinet looks like this:"
+constitution[:executive_branch][:administration][:cabinet].each do |position, person|
+  puts "#{position.to_s.gsub("_", " ")}..... #{person}"
+end
+puts ""
+puts "___"
+puts "Here's a random independent establishment or government corporation:"
+puts constitution[:executive_branch][:i_e_g_c][rand(63)]
+puts ""
+puts "___"
+p "The Secretary Of Housing And Urban Development is #{constitution[:executive_branch][:administration][:cabinet][:secretary_of_housing_and_urban_development]}. Yay?"
+puts ""
+puts "___"
+puts "Number of sitting Supreme Court Justices:"
+puts constitution[:judicial_branch][:supreme_court_justices].length

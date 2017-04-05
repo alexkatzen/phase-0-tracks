@@ -1,7 +1,13 @@
-# Create a method 'alias_generator' that takes a name in the form of a string with two words separated by space: (fullname)
-  # Create an array 'given_name' of the two words using Name.split(" ")
+# Create a method 'create_alias' that takes a name in the form of a string with two words separated by space: (fullname)
+def create_alias(fullname)
+
+  # Create an array 'given_name' of the two words using Name.split(' ')
+  given_name = fullname.split(' ')
 
   # Store an array of vowels in including both the upper and lower case variations
+  vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+  consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z', 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z']
+
   # Store an array of consonants including both the upper and lower case variations
 
   # Create a function 'translate' that maps each letter in a string to 
@@ -9,7 +15,7 @@
     
     # If the letter is a vowel, map! that that letter to the next vowel
       # If the letter is a 'u' map! the letter to an 'a'
-      # Elsif the letter is a 'U' map! the letter to an 'A' 
+      # Elsif the letter is a 'U' map! the letter to an 'A'
       # Otherwise, get the index position of the of the letter in the vowels array, and map! it to the letter at the next index position.
 
     # Elsif the letter is a consonant, map! that character to the next consonant
@@ -23,3 +29,7 @@
   # Translate the first_name argument and set it to 'encrypted_last_name'
 
   # return 'encrypted_first_name' + 'encrypted_last_name'
+
+end # end create_alias
+
+p create_alias('Felicia Torres') # Should become 'Vussit Gimodoe'

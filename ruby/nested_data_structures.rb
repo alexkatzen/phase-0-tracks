@@ -1,3 +1,5 @@
+# The Branches Of The US Government
+
 constitution = {
   legislative_branch: {
     congress: ["Senate", "House Of Representatives"],
@@ -166,6 +168,8 @@ constitution = {
       ]
   }
 }
+
+# print nested data
 puts "___"
 puts "The current US President is (╯°□°)╯︵ ┻━┻ #{constitution[:executive_branch][:administration][:president].reverse}"
 puts ""

@@ -13,7 +13,19 @@ constitution = {
   
   executive_branch: {
     administration: {},
-    offices: [],
+    offices_of_the_president: [
+      "White House Office",
+      "Office Of The Vice President",
+      "Council Of Economic Advisors",
+      "Council On Environmental Quality",
+      "National Security Council",
+      "Office Of Administration",
+      "Office Of Management And Budget",
+      "Office Of National Drug Control Policy",
+      "Office Of Policy Development",
+      "Office Of Science And Technology Policy",
+      "Office Of The U.S. Trade Representative",
+      ],
     departments: [
       "Department Of Agriculture",
       "Department Of Commerce",

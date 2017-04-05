@@ -4,17 +4,18 @@ def create_alias(fullname)
   # Create an array 'given_name' of the two words using Name.split(' ')
   full_name = fullname.split(' ')
 
-  # Array for the characters in the first name
-  first_name = full_name[0].chars
-
-  # Array for the characters in the last name
-  last_name = full_name[1].chars
+  # Identify the first and last names
+  first_name = full_name[0]
+  last_name = full_name[1]
 
 
-  # Create a function 'translate' that maps each letter in a string to 
+  # Create a function 'translate' that maps each letter in an array to 
   # the appropriate vowel or consonant:
   def translate(word)  
     
+    # break the word into an array of letters
+    untranslated = word.chars
+
     # Store an array of vowels in including both the upper and lower case variations
     vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
   
@@ -33,6 +34,8 @@ def create_alias(fullname)
       # Otherwise, get the index position of the letter in the consonants array, and map! it to the letter at the next index position.
 
     # Else, if the character is not a character in either of the arrays, e.g. a number, assign a random vowel
+
+    return untranslated.join('')
   
   end # end translate
 

@@ -41,8 +41,7 @@ constitution = {
         director_of_the_central_intelligence_agency: "Mike Pompeo",
         administrator_of_the_environmental_protection_agency: "Agency Scott Pruitt",
         administrator_of_the_small_business_administration: "Linda E. McMahon"
-      }
-
+        }
       },
     offices_of_the_president: [
       "White House Office",
@@ -142,7 +141,28 @@ constitution = {
   },
   
   judicial_branch: {
-
-
+    supreme_court_justices: [
+      "John G. Roberts",
+      "Anthony M. Kennedy",
+      "Clarence Thomas",
+      "Ruth Bader Ginsburg",
+      "Stephen G. Breyer",
+      "Samuel Anthony Alito Jr.",
+      "Sonia Sotomayor",
+      "Elena Kagan"
+      ],
+    federal_courts: [
+      "United Statues Courts Of Appeals",
+      "United States District Courts",
+      "Territorial Courts",
+      "United States Court Of International Trade"
+      "United States Court Of Federal Claims",
+      "United States Court Of Appeals For The Armed Forces",
+      "United States Tax Court",
+      "United States Court Of Appeals For Veterans Claims",
+      "Administrative Office Of The United States Courts",
+      "Federal Judicial Center",
+      "United States Sentencing Commission"
+      ]
   }
 }

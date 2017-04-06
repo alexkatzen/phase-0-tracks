@@ -1,3 +1,5 @@
+# RELEASE 1 - - - - - - - - - - #
+
 # Should return the index position of 
 # the given number in the array or nil if not present.
 
@@ -29,10 +31,12 @@ p search(my_array, 5)
 
 
 
-# Define a method that takes in a number as a parameter.
-def fib(number)
+# RELEASE 2 - - - - - - - - - - #
 
-  # Create an array to hold fib numbers with the first two populated.
+# Define a method that takes in a number as a parameter.
+def fib(number2_or_greater)
+
+  # Create an array to hold fib numbers with the first 2 populated.
   fib_numbers = [0, 1]
 
   # Keep track of the length of the fib_numbers array
@@ -51,4 +55,4 @@ def fib(number)
 
 end
 
-p fib(100)
+p fib(1)

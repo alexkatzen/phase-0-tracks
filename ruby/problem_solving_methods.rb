@@ -55,34 +55,49 @@ def fib(number2_or_greater)
 
 end
 
-#p fib(100)
+p fib(100)
+
+puts ""
 
 
 
-p ("# Release 2: Sort an Array - - - - - - - - - - #")
-misc = [2, 232, 5, 32, 14, 67, 8, 43, 1, 23, 0, 1234, 84, 3]
+# Release 2: Sort an Array - - - - - - - - - - #
+p "# Release 2: Sort an Array - - - - - - - - - - - - - - - - "
 
-# Insertion Sort
+
+misc = [2, 232, 5, 32, 14, 67, 8, 43, 1, 23, 0, 1234, 84, 3, 2, 6, 8, 3, 8, 9, 3, 4, 5, 3, 2, 2, 56]
+
 def insertion_sort(arr)
-
   
   # for each number in the array _except_ the first (the first can be considered 'sorted'):
   i = 1
-
   while i < arr.length
     
     # Assign a variable 'element' to the number at the current place in the unsorted portion of the list.
+    element = arr[i]
+
     # Assign a variable 'current_index' to the _index position_ of the 'element'.
+    current_index = i
 
     # Until the number to the left of 'element' is _less_ than 'element' do the following:
+    while (current_index > 0 && arr[current_index-1] > element)
+
       # Shift the elements in the array to the left.
+      arr[current_index] = arr[current_index-1]
+
       # Subtract 1 from 'current_index' to iterate to the next number.
+      current_index = current_index-1
 
+    end
+    
     # Insert the element at the updated current index.
-
+    arr[current_index] = element 
 
     # iterate the main count
     i += 1
     end
+
+  return arr    
 end
-insertion_sort(misc)
+
+p insertion_sort(misc)

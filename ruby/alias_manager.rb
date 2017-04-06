@@ -18,7 +18,7 @@ def create_alias(fullname)
     # Store an ordered array of vowels and consonants including both upper and lower case characters
     vowels_and_consonants = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z', 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z']
     
-    # map each character in the array to the appropriate next character.
+    # .map! each character in the array to the appropriate next character.
     translated.map! do |letter|
 
       # find the index position of the letter in the vowels and consonants array
@@ -55,12 +55,12 @@ def create_alias(fullname)
   
   end # end translate
 
-  # Translate given_name[0] and set it to 'encrypted_last_name'
-  # Translate given_name[1] and set it to 'encrypted_first_name'
-  translate(first_name)
+
+  encrypted_first_name = translate(first_name)
+  encrypted_last_name translate(last_name)
   
 
-  # return 'encrypted_first_name' + 'encrypted_last_name'
+  return "#{encrypted_last_name} #{encrypted_first_name}"
 
 end # end create_alias
 

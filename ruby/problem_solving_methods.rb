@@ -13,12 +13,17 @@ def search (array, number)
   # Loop through the given array, add a key to the hash for each item in the array
   # with a value of it's index position
   counter = 0
-
+  
   for i in array 
     index_positions[i] = counter
     counter += 1
   end
+  
+  return index_positions[number]
 
 end
 
 p search(my_array, 25)
+p search(my_array, 21)
+p search(my_array, 5)
+

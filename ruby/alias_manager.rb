@@ -12,6 +12,11 @@ def create_alias(fullname)
   # the appropriate vowel or consonant:
   def translate(word)  
     
+    # add a check for nil, create string to generate random
+    if word == nil
+      word = "^^^^^^"
+    end
+
     # break the word into an array of letters
     translated = word.chars
 
@@ -28,23 +33,18 @@ def create_alias(fullname)
       if untranslated_index == nil
         letter = vowels_and_consonants[rand(52)]
       
-      # Elsif  the letter is a 'u' map! the letter to an 'a'
       elsif letter == 'u'
         letter = 'a'
 
-      # Elsif the letter is a 'U' map! the letter to an 'A'
       elsif letter == 'U'
         letter = 'A'
 
-      # Elsif  the letter is a 'z', map! the letter to a 'b'
       elsif letter == 'z'
         letter = 'b'
 
-      # Elsif the letter is a 'Z', map! the letter to a 'B'
       elsif letter == 'Z'
         letter = 'B'
 
-      # Else, set the letter to the letter at the next index position.
       else
        letter = vowels_and_consonants[untranslated_index+1] 
       end
@@ -55,14 +55,12 @@ def create_alias(fullname)
   
   end # end translate
 
-
   encrypted_first_name = translate(first_name)
-  encrypted_last_name translate(last_name)
+  encrypted_last_name = translate(last_name)
   
-
   return "#{encrypted_last_name} #{encrypted_first_name}"
 
 end # end create_alias
 
 puts create_alias('Felicia Torres') # Should become 'Vussit Gimodoe'
-puts create_alias('123456')
+

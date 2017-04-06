@@ -1,4 +1,4 @@
-# RELEASE 1 - - - - - - - - - - #
+# Release 0: Implement a Simple Search - - - - - - - - - - #
 
 # Should return the index position of 
 # the given number in the array or nil if not present.
@@ -31,7 +31,7 @@ p search(my_array, 5)
 
 
 
-# RELEASE 2 - - - - - - - - - - #
+# Release 1: Calculate Fibonacci Numbers - - - - - - - - - - #
 
 # Define a method that takes in a number as a parameter.
 def fib(number2_or_greater)
@@ -55,4 +55,8 @@ def fib(number2_or_greater)
 
 end
 
-p fib(1)
+p fib(100)
+
+
+
+# Release 2: Sort an Array - - - - - - - - - - #

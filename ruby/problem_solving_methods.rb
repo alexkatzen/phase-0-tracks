@@ -60,3 +60,19 @@ p fib(100)
 
 
 # Release 2: Sort an Array - - - - - - - - - - #
+
+# Insertion Sort
+
+# for each number in the array _except_ the first (the first can be considered 'sorted'):
+  
+  # Assign a variable 'element' to the number at the current place in the unsorted portion of the list.
+  # Assign a variable 'current_index' to the _index position_ of the 'element'.
+
+  # Until the number to the left of 'element' is _less_ than 'element' do the following:
+    # Shift the elements in the array to the left.
+    # Subtract 1 from 'current_index' to iterate to the next number.
+
+  # Insert the element at the updated current index.
+
+
+

@@ -28,10 +28,27 @@ p search(my_array, 21)
 p search(my_array, 5)
 
 
-def fib
+
 # Define a method that takes in a number as a parameter.
-# Create an array to hold fib numbers with the first two populated.
-# In a loop, generate fib numbers in order and keep adding them to the array until the array's length is equal to the given number.
-# Return the array.
+def fib(number)
+
+  # Create an array to hold fib numbers with the first two populated.
+  fib_numbers = [0, 1]
+
+  # Keep track of the length of the fib_numbers array
+  fib_number_count = fib_numbers.length
+
+  # Until the desired number of fib numbers are generated, keep adding fib numbers
+  until fib_number_count == number
+    fib_numbers.push(fib_numbers[-1]+fib_numbers[-2])
+    
+    #update the fib_number_count
+    fib_number_count = fib_numbers.length
+  end
+
+  # Return the array.
+  return fib_numbers
+
 end
 
+p fib(100)

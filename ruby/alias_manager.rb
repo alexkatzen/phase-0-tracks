@@ -1,18 +1,17 @@
-# Create a method 'create_alias' that takes in the name as a string.
 def create_alias(fullname)
 
-  # Create an array 'full_name' of the first and last name
+  # Create an array 'full_name' that includes the first and last name
   full_name = fullname.split(' ')
 
   # Identify the first and last names
   first_name = full_name[0]
   last_name = full_name[1]
 
-  # Create a function 'translate' that maps each letter in an array to 
+  # Create a method 'translate' that maps each letter in an array to 
   # the appropriate vowel or consonant:
   def translate(word)  
     
-    # if the word is nil, create string to generate randomness with.
+    # if the word is nil, assign a string to generate randomness with.
     if word == nil
       word = "^^^^^^"
     end

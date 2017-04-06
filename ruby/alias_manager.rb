@@ -1,7 +1,7 @@
 # Create a method 'create_alias' that takes in the name as a string.
 def create_alias(fullname)
 
-  # Create an array 'full_name' of the first and last name using .split(' ')
+  # Create an array 'full_name' of the first and last name
   full_name = fullname.split(' ')
 
   # Identify the first and last names
@@ -46,13 +46,13 @@ def create_alias(fullname)
         letter = 'B'
 
       else
-       letter = vowels_and_consonants[untranslated_index+1] 
+        letter = vowels_and_consonants[untranslated_index+1] 
       end
 
     end # end translating block
 
     return translated.join('')
-    
+
   end # end translate
 
   encrypted_first_name = translate(first_name)
@@ -62,18 +62,22 @@ def create_alias(fullname)
 
 end # end create_alias
 
-puts create_alias('Felicia Torres') # Should become 'Vussit Gimodoe'
 
+# Create a user interface - - - - - 
+
+aliases = {}
 
 while true 
-  puts "Please type your first and last name to generate an alias. Hit \'Enter\' when finished."
+  puts "Please type a First and Last name to generate it's alias. Hit \'Enter\' when finished."
   answer = gets.chomp
   if answer == ""
+    aliases.each do |key, value|
+      puts "#{key} is also known as #{value}"
+    end
     break
-  else 
-    puts create_alias(answer)
+  else
+    new_alias = create_alias(answer)
+    aliases[answer] = new_alias
+    puts new_alias
   end
 end
-
-
-

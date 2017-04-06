@@ -28,20 +28,10 @@ p search(my_array, 21)
 p search(my_array, 5)
 
 
-
-# Define a method 'fib' that takes number
-
-# Create an array to hold the fib numbers populated with 0 and 1.
-fib_numbers = [0, 1]
-
-# Set a counter starting at 0
-
-# Loop from 0 to given number
-
-# When the counter is >=2
-
-  # For each number, push a number to the array that 
-  # equals the sum of (number-2 + number -1)
-
-
+def fib
+# Define a method that takes in a number as a parameter.
+# Create an array to hold fib numbers with the first two populated.
+# In a loop, generate fib numbers in order and keep adding them to the array until the array's length is equal to the given number.
+# Return the array.
+end
 

@@ -27,3 +27,21 @@ p search(my_array, 25)
 p search(my_array, 21)
 p search(my_array, 5)
 
+
+
+# Define a method 'fib' that takes number
+
+# Create an array to hold the fib numbers populated with 0 and 1.
+fib_numbers = [0, 1]
+
+# Set a counter starting at 0
+
+# Loop from 0 to given number
+
+# When the counter is >=2
+
+  # For each number, push a number to the array that 
+  # equals the sum of (number-2 + number -1)
+
+
+

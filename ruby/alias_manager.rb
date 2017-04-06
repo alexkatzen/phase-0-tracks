@@ -1,7 +1,7 @@
-# Create a method 'create_alias' that takes a name in the form of a string with two words separated by space: (fullname)
+# Create a method 'create_alias' that takes in the name as a string.
 def create_alias(fullname)
 
-  # Create an array 'given_name' of the two words using Name.split(' ')
+  # Create an array 'full_name' of the first and last name using .split(' ')
   full_name = fullname.split(' ')
 
   # Identify the first and last names
@@ -12,7 +12,7 @@ def create_alias(fullname)
   # the appropriate vowel or consonant:
   def translate(word)  
     
-    # add a check for nil, create string to generate random
+    # if the word is nil, create string to generate randomness with.
     if word == nil
       word = "^^^^^^"
     end
@@ -52,7 +52,7 @@ def create_alias(fullname)
     end # end translating block
 
     return translated.join('')
-  
+    
   end # end translate
 
   encrypted_first_name = translate(first_name)
@@ -63,4 +63,17 @@ def create_alias(fullname)
 end # end create_alias
 
 puts create_alias('Felicia Torres') # Should become 'Vussit Gimodoe'
+
+
+while true 
+  puts "Please type your first and last name to generate an alias. Hit \'Enter\' when finished."
+  answer = gets.chomp
+  if answer == ""
+    break
+  else 
+    puts create_alias(answer)
+  end
+end
+
+
 

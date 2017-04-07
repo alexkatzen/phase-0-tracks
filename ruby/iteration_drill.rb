@@ -125,6 +125,7 @@ end
 # the year 2000. Do not use any special built-in methods.
 # ----
 
+
 pre_2000_animals = {}
 
 extinct_animals.each do |key, value|
@@ -132,7 +133,10 @@ extinct_animals.each do |key, value|
     pre_2000_animals[key]=value
   end
 end
-p extinct_animals = pre_2000_animals
+p pre_2000_animals
+
+
+# extinct_animals = pre_2000_animals
 
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
@@ -140,11 +144,13 @@ p extinct_animals = pre_2000_animals
 # Do not use any special built-in methods.
 # ----
 
+
 extinct_animals.each do |key, value|
   extinct_animals[key] = value-3
 end
 
 p extinct_animals
+
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Check if they're included in extinct_animals, one by one:
@@ -153,6 +159,26 @@ p extinct_animals
 # "Saiga Antelope"
 # Do not use any special built-in methods.
 # ----
+
+
+animals = ["Andean Cat", "Dodo", "Saiga Antelope"]
+
+animals.each do |animal|
+  extinct = false
+
+  extinct_animals.each do |key, value|
+    if animal == key
+      extinct = true
+    end
+  end
+
+  if extinct == true
+    puts "The #{animal} is extinct"
+  else
+    puts "The #{animal} is not extinct"
+  end
+
+end
 
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!

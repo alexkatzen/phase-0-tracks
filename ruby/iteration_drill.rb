@@ -6,6 +6,16 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
 # ----
+zombie_stars = ""
+
+zombie_apocalypse_supplies.each do |i| 
+  if zombie_apocalypse_supplies.index("#{i}") != zombie_apocalypse_supplies.length-1
+    zombie_stars += "#{i} * "
+  else
+    zombie_stars += "#{i}"
+  end
+end
+puts zombie_stars
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.

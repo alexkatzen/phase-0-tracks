@@ -132,7 +132,6 @@ extinct_animals.each do |key, value|
     pre_2000_animals[key]=value
   end
 end
-
 p extinct_animals = pre_2000_animals
 
 # 3. Our calculations were completely off, turns out all of those animals went
@@ -141,6 +140,11 @@ p extinct_animals = pre_2000_animals
 # Do not use any special built-in methods.
 # ----
 
+extinct_animals.each do |key, value|
+  extinct_animals[key] = value-3
+end
+
+p extinct_animals
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Check if they're included in extinct_animals, one by one:

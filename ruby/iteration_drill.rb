@@ -17,9 +17,11 @@ zombie_apocalypse_supplies.each do |i|
 end
 # puts zombie_stars
 
+
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 # ----
+
 
 i = 1
 while i < zombie_apocalypse_supplies.length
@@ -41,10 +43,28 @@ puts zombie_apocalypse_supplies
 # For instance: are boots in your list of supplies?
 # ----
 
+def supply_checker(arr, item_to_check)
+  found = false
+  arr.each do |supply|
+    if item_to_check.downcase == supply.downcase 
+      found = true
+    end
+  end
+  if found == true
+    puts "YES, #{item_to_check} was found in the zombie apocalypse supplies"
+  else
+    puts "Sorry, #{item_to_check} is not in the zombie supplies"
+  end
+end
+supply_checker(zombie_apocalypse_supplies, "hatchet")
+supply_checker(zombie_apocalypse_supplies, "Beer")
+
+
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
 # ----
+
 
 # 5. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies

@@ -65,6 +65,17 @@ supply_checker(zombie_apocalypse_supplies, "Beer")
 # leaving only 5. Do not use any special built-in methods.
 # ----
 
+def unload_three(arr)
+i = 0
+new_arr = []  
+  while i < 5
+    new_arr.push(arr[i])
+    i += 1
+  end
+arr = new_arr
+end
+puts unload_three(zombie_apocalypse_supplies)
+
 
 # 5. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies

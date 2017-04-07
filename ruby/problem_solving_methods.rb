@@ -95,7 +95,8 @@ def insertion_sort(arr)
 
     # iterate the main count
     i += 1
-    end
+  
+  end
 
   return arr    
 end

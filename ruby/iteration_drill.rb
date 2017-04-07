@@ -114,11 +114,10 @@ extinct_animals = {
 # with a dash in between the key and value, and an asterisk between each pair.
 # ----
 
-extinct_animals.each do |key, value|
 
+extinct_animals.each do |key, value|
 puts "#{key} — #{value}"
 puts "*"
-
 end
 
 
@@ -126,6 +125,15 @@ end
 # the year 2000. Do not use any special built-in methods.
 # ----
 
+pre_2000_animals = {}
+
+extinct_animals.each do |key, value|
+  if value < 2000
+    pre_2000_animals[key]=value
+  end
+end
+
+p extinct_animals = pre_2000_animals
 
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals

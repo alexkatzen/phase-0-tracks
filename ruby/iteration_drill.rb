@@ -15,11 +15,26 @@ zombie_apocalypse_supplies.each do |i|
     zombie_stars += "#{i}"
   end
 end
-puts zombie_stars
+# puts zombie_stars
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 # ----
+
+i = 1
+while i < zombie_apocalypse_supplies.length
+  supply = zombie_apocalypse_supplies[i]
+  current_index = i
+  while (current_index > 0 && zombie_apocalypse_supplies[current_index-1].downcase > supply.downcase)
+    zombie_apocalypse_supplies[current_index] = zombie_apocalypse_supplies[current_index-1]
+    current_index = current_index-1
+  end
+  zombie_apocalypse_supplies[current_index] = supply
+  i +=1
+end
+
+puts zombie_apocalypse_supplies
+
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.

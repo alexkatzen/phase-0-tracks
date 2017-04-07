@@ -186,3 +186,9 @@ end
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
 # ----
+
+non_extinct_pigeons = extinct_animals.assoc("Passenger Pigeon")
+extinct_animals.delete("Passenger Pigeon")
+p non_extinct_pigeons
+p extinct_animals
+

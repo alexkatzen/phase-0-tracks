@@ -74,7 +74,7 @@ new_arr = []
   end
 arr = new_arr
 end
-puts unload_three(zombie_apocalypse_supplies)
+#puts unload_three(zombie_apocalypse_supplies)
 
 
 # 5. You found another survivor! This means you can combine your supplies.
@@ -84,6 +84,18 @@ puts unload_three(zombie_apocalypse_supplies)
 # documentation for Arrays.
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
+
+
+def unify_arrays(array1, array2) 
+unified_array = []
+array1.each { |i| unified_array.push(i) }
+array2.each { |i| unified_array.push(i) }
+unified_array = unified_array.uniq
+end
+
+p unify_arrays(zombie_apocalypse_supplies, other_survivor_supplies)
+
+
 # ----
 
 # Hash Drills

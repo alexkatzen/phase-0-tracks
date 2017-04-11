@@ -77,7 +77,7 @@ p mortimer.age
 p mortimer.ethnicity
 
 
-
+# build many, many santas
 example_genders = ["agender", "androgyne", "female", "Gender Questioning","Intersex", "Two-Spirit", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "east-asian", "persian", "indian", "pacific-islander", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 

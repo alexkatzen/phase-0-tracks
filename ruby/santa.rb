@@ -9,8 +9,8 @@ class Santa
     @age = 0
   end
 
-  attr_reader :ethnicity, :age, :reindeer_ranking
-  attr_accessor :gender
+  attr_reader :ethnicity, :reindeer_ranking
+  attr_accessor :gender, :age
 
   attr_writer
 
@@ -75,3 +75,14 @@ p mortimer.gender
 # get age and ethnicity
 p mortimer.age
 p mortimer.ethnicity
+
+
+
+example_genders = ["agender", "androgyne", "female", "Gender Questioning","Intersex", "Two-Spirit", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "east-asian", "persian", "indian", "pacific-islander", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+for i in 0..rand(1000)
+  i = Santa.new(example_genders[rand(genders.length)], example_ethnicities[rand(ethnicities.length)])
+  i.age= rand(140)
+  puts "You created a #{i.ethnicity} Santa who is #{i.age} years old and #{i.gender}."
+end

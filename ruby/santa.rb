@@ -9,6 +9,11 @@ class Santa
     @age = 0
   end
 
+  attr_reader :ethnicity, :age, :reindeer_ranking
+  attr_accessor :gender
+
+  attr_writer
+
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
   end
@@ -17,41 +22,16 @@ class Santa
     puts "That was a good #{cookie_type} cookie!"
   end
 
-  # get the gender
-  def gender
-    @gender
-  end
-
-  # get the ethnicity
-  def ethnicity
-    @ethnicity
-  end
-
-  #get age
-  def age
-    @age
-  end
-
-  # get the current reindeer ranking
-  def reindeer_ranking
-    @reindeer_ranking
-  end
-
   # age the santa by one year
   def celebrate_birthday
     @age+= 1
   end
 
-  # get mad at a reindeer
+  # set the order of the reindeer ranking
   def get_mad_at=(reindeer_name)
     i = @reindeer_ranking.index(reindeer_name)
     @reindeer_ranking.push(reindeer_ranking[i])
     @reindeer_ranking.delete_at(i)
-  end
-
-  # set the gender
-  def set_gender=(gender)
-    @gender = gender
   end
 
 end
@@ -89,7 +69,7 @@ p mortimer.reindeer_ranking
 
 # set the gender
 p mortimer.gender
-mortimer.set_gender=("Androgynous")
+mortimer.gender=("Androgynous")
 p mortimer.gender
 
 # get age and ethnicity

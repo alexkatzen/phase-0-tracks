@@ -100,3 +100,26 @@ add_item(some_list, "onions", 1)
 add_item(some_list, "Ice Cream", 4)
 remove_item(some_list, "lemonade")
 update_quantity(some_list, "ice cream", 1)
+
+
+# Release 4: Reflect
+
+# What did you learn about pseudocode from working on this challenge?
+  # Probably the most important takeaway is the value of good pseudocoding within the context of a pair session. It really helps to keep both participants on the same page throughout.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+  # Both arrays and hashes were needed to complete the challenge. When a simple list of items was needed, an array was used. When associating items with quantities, a hash was the way to go. 
+
+# What does a method return?
+  # a method returns either what is implicitly returned on it's last line, or what is returned using the 'return' keyword
+
+# What kind of things can you pass into methods as arguments?
+  # Values like integers or strings, data structures like arrays or hashes, optional arguments
+
+# How can you pass information between methods?
+  # A method can take a variable who's value was set by another method
+  # A method can be called from within another method taking information passed from within the parent method
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+  # The challenge was good practice in working with arrays and hashes. I'm not sure if we were supposed to practice passing the functionality of methods, but I'd like to have a better understanding of how/why/when to do that (procs?).
+

@@ -39,8 +39,9 @@ class Word_Guesser
     if word.length == 1
       unique_letters = [word]
     else 
-      unique_letters = word.chars.uniq!
+      unique_letters = word.chars.uniq
     end 
+
 
     @secret_word.each_char { |ch|
       letter_exits = false
@@ -76,7 +77,7 @@ class Word_Guesser
     
 
     # If there are no more guesses left
-    if guesses_left == 0
+    if @guesses_left == 0
       
       # Game responds with "The game is over."
       p "This game is over!"
@@ -89,20 +90,12 @@ class Word_Guesser
       # Game responds with "Congratulations! You guessed the word in (n) many guesses.
       p "Congratulations! You got the word in #{@number_of_guesses} guesses!"
       
-    
-    # If they already guessed the word:
-      # Game responds with "You already guessed that word!"
-      # The game gives feedback:
-        # If some characters are right:
-          # Game responds with "Looks like you got some parts right..."
-          # Game gives feedback for each character in secret word:
-            # Dash for characters that aren't in guessed word.
-            # Show the character if it exists in secret word.
-        # If no characters are right:
-          # Game responds with: "The guess is wrong!"
-          # Game gives feedback for each character in secret word:
-            # Dash for characters that aren't in guessed word.
-    
+    # else if they already guessed the word:
+    elsif @guessed_words.index(guess) != nil
+      p "You already guessed that word!"
+      p "The secret word is: " + feedback(guess)
+      return "You already guessed that word!"
+
     # Otherwise:
     else
 
@@ -129,5 +122,12 @@ class Word_Guesser
 
 end # end class
 
-# myGame = Word_Guesser.new("Brontosaurus")
-# myGame.make_guess("saurus")
+myGame = Word_Guesser.new("Brontosaurus")
+
+p "Welcome to the word guesser!"
+
+loop do
+  p "Make a guess"
+  answer = gets.chomp
+  myGame.make_guess(answer)
+end

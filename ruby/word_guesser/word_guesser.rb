@@ -19,19 +19,18 @@
 # Creator can make a new game by calling Word_guesser.new
 class Word_Guesser
 
-
   # Declare any attr attributes
   attr_writer :guess
+  attr_reader :guesses_left
 
   # Initialize
   def initialize(secret_word)
     @secret_word = secret_word.upcase 
-    @guesses_left = secret_word.length.to_i
+    @guesses_left = secret_word.length
     @guess = nil
     @number_of_guesses = 0
     @guessed_words = []
   end
-
 
   def feedback(word)
     feedback = ""
@@ -41,7 +40,6 @@ class Word_Guesser
     else 
       unique_letters = word.chars.uniq
     end 
-
 
     @secret_word.each_char { |ch|
       letter_exits = false
@@ -60,7 +58,7 @@ class Word_Guesser
   end
 
   # Player can ask the word_guesser how many guesses are left.
-  def guesses_left
+  def get_guesses_left
     
     # Game will respond with either how many guesses are left or that "This game is over!"
     if @guesses_left > 0
@@ -68,7 +66,7 @@ class Word_Guesser
     else
       p "This game is over!"
     end
-  end # end guesses_left
+  end # end get_guesses_left
 
 
   # Player can make a guess
@@ -104,6 +102,9 @@ class Word_Guesser
       @number_of_guesses += 1
       @guesses_left -= 1
 
+      # tell the user how many guesses left
+      guesses_left
+
       # If the number of guesses left is zero,
       if @guesses_left == 0
 
@@ -120,14 +121,17 @@ class Word_Guesser
 
   end # end make_guess
 
+  p "The game has started!"
+
+
 end # end class
 
-myGame = Word_Guesser.new("Brontosaurus")
+# myGame = Word_Guesser.new("Brontosaurus")
+# myGame.get_guesses_left
+# p myGame.guesses_left
 
-p "Welcome to the word guesser!"
-
-loop do
-  p "Make a guess"
-  answer = gets.chomp
-  myGame.make_guess(answer)
-end
+# loop do
+#   p "Make a guess"
+#   answer = gets.chomp
+#   myGame.make_guess(answer)
+# end

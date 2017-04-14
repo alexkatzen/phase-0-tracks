@@ -6,12 +6,12 @@ describe Word_Guesser do
 
   # Test the game returns the correct # of guesses left for a new game
   it "Tells the user how many guesses are left when asked" do
-    expect(new_game.guesses_left).to eq "There are 12 guesses left in the game."
+    expect(new_game.guesses_left).to eq 12
   end
 
-  # Test the game returns "This game is over!" When the # of guesses_left is 0
+  # Test the game reports to the user that "This game is over!" they call "Get_guesses_left"
   it "Reports that the game is over when there are 0 guesses left" do
-    expect(game_over.guesses_left).to eq "This game is over!"
+    expect(game_over.get_guesses_left).to eq "This game is over!"
   end
 
   # Test that a dead game will return "This game is over!" when you try to guess its word.
@@ -35,5 +35,7 @@ describe Word_Guesser do
     new_game.make_guess("saurus")
     expect(new_game.make_guess("saurus")).to eq "You already guessed that word!"
   end
+
+
 
 end

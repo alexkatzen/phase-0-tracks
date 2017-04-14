@@ -28,6 +28,7 @@ class Word_Guesser
     @secret_word = secret_word.upcase 
     @guesses_left = secret_word.length.to_i
     @guess = nil
+    @number_of_guesses = 0
   end
 
 
@@ -40,15 +41,28 @@ class Word_Guesser
     else
       p "This game is over!"
     end
-  end
+  end # end guesses_left
+
 
   # Player can make a guess
+  def make_guess(word)
+    guess = word.upcase
     
-    # If there are no more guesses left
-      # Game responds with "The game is over."
 
-    # If they guessed the word: 
+    # If there are no more guesses left
+    if guesses_left == 0
+      
+      # Game responds with "The game is over."
+      p "This game is over!"
+
+    # If they guessed the word:
+    elsif guess == @secret_word
+      
+      @number_of_guesses += 1
+
       # Game responds with "Congratulations! You guessed the word in (n) many guesses.
+      p "Congratulations! You got the word in #{@number_of_guesses} guesses!"
+      
     
     # If they already guessed the word:
       # Game responds with "You already guessed that word!"
@@ -78,8 +92,12 @@ class Word_Guesser
             # Game responds with: "The guess is wrong!"
             # Game gives feedback for each character in secret word:
               # Dash for characters that aren't in guessed word.
+    
+    end # end control flow
+
+  end # end make_guess
 
 end # end class
 
 # myGame = Word_Guesser.new("Brontosaurus")
-# myGame.guesses_left
+# myGame.make_guess("brontosaurus")

@@ -14,4 +14,14 @@ describe Word_Guesser do
     expect(game_over.guesses_left).to eq "This game is over!"
   end
 
+
+  # Test that a dead game will return "This game is over!" when you try to guess its word.
+  # it "Dead game tells the user the game is over when you try to guess its secret word" do
+  #   expect(game_over.make_guess("unicorn")).to eq "This game is over!"
+  # end
+
+  it "Returns the correct congratulations message with a correct guess" do
+    expect(new_game.make_guess("brontosaurus")).to eq "Congratulations! You got the word in 1 guesses!"
+  end
+
 end

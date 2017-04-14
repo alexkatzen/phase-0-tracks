@@ -30,6 +30,8 @@ class Word_Guesser
     @guess = nil
     @number_of_guesses = 0
     @guessed_words = []
+    p "The game has begun!!"
+
   end
 
   def feedback(word)
@@ -62,7 +64,7 @@ class Word_Guesser
     
     # Game will respond with either how many guesses are left or that "This game is over!"
     if @guesses_left > 0
-      p "There are #{@guesses_left.to_s} guesses left in the game."
+      p "There are #{@guesses_left} guesses left in the game."
     else
       p "This game is over!"
     end
@@ -103,7 +105,7 @@ class Word_Guesser
       @guesses_left -= 1
 
       # tell the user how many guesses left
-      guesses_left
+      get_guesses_left
 
       # If the number of guesses left is zero,
       if @guesses_left == 0
@@ -121,17 +123,43 @@ class Word_Guesser
 
   end # end make_guess
 
-  p "The game has started!"
-
-
 end # end class
 
-# myGame = Word_Guesser.new("Brontosaurus")
-# myGame.get_guesses_left
-# p myGame.guesses_left
 
-# loop do
-#   p "Make a guess"
-#   answer = gets.chomp
-#   myGame.make_guess(answer)
-# end
+# DRIVER CODE
+myGame = Word_Guesser.new("Brontosaurus")
+
+myGame.get_guesses_left
+puts ""
+myGame.make_guess("a")
+myGame.make_guess("rstlne")
+myGame.make_guess("aeiou")
+myGame.make_guess("computer")
+myGame.make_guess("does")
+myGame.make_guess("not")
+myGame.make_guess("compute")
+myGame.make_guess("pls")
+myGame.make_guess("help")
+myGame.make_guess("me")
+myGame.make_guess(":(")
+myGame.make_guess("argggh!")
+
+puts ""
+puts "*"*16
+puts ""
+
+newGame = Word_Guesser.new("Bill")
+
+newGame.get_guesses_left
+puts ""
+newGame.make_guess("a")
+newGame.make_guess("rstlne")
+newGame.make_guess("aeiou")
+newGame.make_guess("computer")
+newGame.make_guess("does")
+
+
+
+
+
+

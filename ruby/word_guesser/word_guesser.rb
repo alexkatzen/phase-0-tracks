@@ -104,18 +104,18 @@ class Word_Guesser
       @number_of_guesses += 1
       @guesses_left -= 1
 
-      # tell the user how many guesses left
-      get_guesses_left
+      # Show the user how many letters in their guessed word are in the secret word
+      p "Correct letters:"
+      p feedback(guess)
 
       # If the number of guesses left is zero,
       if @guesses_left == 0
-
         p "That was your last guess! Game over."
 
       # Otherwise, the game gives feedback:
-      else
 
-        p "The secret word is: " + feedback(guess)
+      else
+        get_guesses_left
 
       end # control flow/guessed_word
     
@@ -145,7 +145,7 @@ myGame.make_guess(":(")
 myGame.make_guess("argggh!")
 
 puts ""
-puts "*"*16
+puts "* "*20
 puts ""
 
 newGame = Word_Guesser.new("Bill")

@@ -4,7 +4,6 @@
   # i.e. write a class for a computer to use, not a human
   # Driver code bridges gap between user and ruby object.
 
-# Code should simulate two users.
 # Game creator enters a word. (Or, this can be a phrase if desired)
 # Player guesses the word/phrase.
 # Guesses are limited to some number that is related to the length of the word.
@@ -58,12 +57,3 @@
           # Game responds with: "The guess is wrong!"
           # Game gives feedback for each character in secret word:
             # Dash for characters that aren't in guessed word.
-
-
-
-      
-
-
-
-
-

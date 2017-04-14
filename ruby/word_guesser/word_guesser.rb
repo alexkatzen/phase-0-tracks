@@ -29,10 +29,36 @@ class Word_Guesser
     @guesses_left = secret_word.length.to_i
     @guess = nil
     @number_of_guesses = 0
+    @guessed_words = []
   end
 
 
-  # Player can ask the word_guesser how many guesses are left
+  def feedback(word)
+    feedback = ""
+
+    if word.length == 1
+      unique_letters = [word]
+    else 
+      unique_letters = word.chars.uniq!
+    end 
+
+    @secret_word.each_char { |ch|
+      letter_exits = false
+      unique_letters.each do |letter|
+        if letter == ch
+          feedback << letter + " "
+          letter_exits = true
+        end
+      end
+      if letter_exits == false
+        feedback << "_ "
+      end
+
+    }
+    return feedback
+  end
+
+  # Player can ask the word_guesser how many guesses are left.
   def guesses_left
     
     # Game will respond with either how many guesses are left or that "This game is over!"
@@ -78,26 +104,30 @@ class Word_Guesser
             # Dash for characters that aren't in guessed word.
     
     # Otherwise:
+    else
+
       # Game adds the guessed word to an array of guessed words
-      # Game subtracts 1 from the guesses left.
-        # If the number of guesses left is zero, 
-          # Game responds with "Game over! Game explodes. Bye Bye."
-        # Otherwise, the game gives feedback:
-          # If some characters are right:
-            # Game responds with "Looks like you got some parts right..."
-            # Game gives feedback for each character in secret word:
-              # Dash for characters that aren't in guessed word.
-              # Show the character if it exists in secret word.
-          # If no characters are right:
-            # Game responds with: "The guess is wrong!"
-            # Game gives feedback for each character in secret word:
-              # Dash for characters that aren't in guessed word.
+      @guessed_words.push(guess)
+      @number_of_guesses += 1
+      @guesses_left -= 1
+
+      # If the number of guesses left is zero,
+      if @guesses_left == 0
+
+        p "That was your last guess! Game over."
+
+      # Otherwise, the game gives feedback:
+      else
+
+        p "The secret word is: " + feedback(guess)
+
+      end # control flow/guessed_word
     
-    end # end control flow
+    end # end control flow/make_guess
 
   end # end make_guess
 
 end # end class
 
 # myGame = Word_Guesser.new("Brontosaurus")
-# myGame.make_guess("brontosaurus")
+# myGame.make_guess("saurus")

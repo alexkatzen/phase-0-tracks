@@ -24,4 +24,8 @@ describe Word_Guesser do
     expect(new_game.make_guess("brontosaurus")).to eq "Congratulations! You got the word in 1 guesses!"
   end
 
+  it "Returns correct feedback for a guessed word" do
+    expect(new_game.make_guess("o")).to eq "The secret word is: _ _ O _ _ O _ _ _ _ _ _ "
+  end
+
 end

@@ -32,7 +32,7 @@ class Word_Guesser
 
 
   # Player can ask the word_guesser how many guesses are left
-  def guesses_left(*x)
+  def guesses_left
     
     # Game will respond with either how many guesses are left or that "This game is over!"
     if @guesses_left > 0

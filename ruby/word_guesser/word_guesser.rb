@@ -16,38 +16,43 @@
 
 # PSEUDOCODE
 
-# Creator can make a new game by calling word_guesser.new
+# Creator can make a new game by calling Word_guesser.new
+class Word_Guesser
 
-# Player can ask the word_guesser how many guesses are left
-  # Game will respond with either how many guesses are left or that "This game is over!"
 
-# Player can make a guess
-  
-  # If there are no more guesses left
-    # Game responds with "The game is over."
+  # Declare any attr attributes
+  attr_writer :guess
 
-  # If they guessed the word: 
-    # Game responds with "Congratulations! You guessed the word in (n) many guesses.
-  
-  # If they already guessed the word:
-    # Game responds with "You already guessed that word!"
-    # The game gives feedback:
-      # If some characters are right:
-        # Game responds with "Looks like you got some parts right..."
-        # Game gives feedback for each character in secret word:
-          # Dash for characters that aren't in guessed word.
-          # Show the character if it exists in secret word.
-      # If no characters are right:
-        # Game responds with: "The guess is wrong!"
-        # Game gives feedback for each character in secret word:
-          # Dash for characters that aren't in guessed word.
-  
-  # Otherwise:
-    # Game adds the guessed word to an array of guessed words
-    # Game subtracts 1 from the guesses left.
-      # If the number of guesses left is zero, 
-        # Game responds with "Game over! Game explodes. Bye Bye."
-      # Otherwise, the game gives feedback:
+  # Initialize
+  def initialize(secret_word)
+    @secret_word = secret_word.upcase 
+    @guesses_left = secret_word.length.to_i
+    @guess = nil
+  end
+
+
+  # Player can ask the word_guesser how many guesses are left
+  def guesses_left(*x)
+    
+    # Game will respond with either how many guesses are left or that "This game is over!"
+    if @guesses_left > 0
+      p "There are #{@guesses_left.to_s} guesses left in the game."
+    else
+      p "This game is over!"
+    end
+  end
+
+  # Player can make a guess
+    
+    # If there are no more guesses left
+      # Game responds with "The game is over."
+
+    # If they guessed the word: 
+      # Game responds with "Congratulations! You guessed the word in (n) many guesses.
+    
+    # If they already guessed the word:
+      # Game responds with "You already guessed that word!"
+      # The game gives feedback:
         # If some characters are right:
           # Game responds with "Looks like you got some parts right..."
           # Game gives feedback for each character in secret word:
@@ -57,3 +62,24 @@
           # Game responds with: "The guess is wrong!"
           # Game gives feedback for each character in secret word:
             # Dash for characters that aren't in guessed word.
+    
+    # Otherwise:
+      # Game adds the guessed word to an array of guessed words
+      # Game subtracts 1 from the guesses left.
+        # If the number of guesses left is zero, 
+          # Game responds with "Game over! Game explodes. Bye Bye."
+        # Otherwise, the game gives feedback:
+          # If some characters are right:
+            # Game responds with "Looks like you got some parts right..."
+            # Game gives feedback for each character in secret word:
+              # Dash for characters that aren't in guessed word.
+              # Show the character if it exists in secret word.
+          # If no characters are right:
+            # Game responds with: "The guess is wrong!"
+            # Game gives feedback for each character in secret word:
+              # Dash for characters that aren't in guessed word.
+
+end # end class
+
+# myGame = Word_Guesser.new("Brontosaurus")
+# myGame.guesses_left

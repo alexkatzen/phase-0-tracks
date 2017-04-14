@@ -5,75 +5,59 @@
   # Driver code bridges gap between user and ruby object.
 
 # Code should simulate two users.
-# User 1 enters a word. (Or, this can be a phrase if desired)
-# User 2 guesses the word/phrase.
+# Game creator enters a word. (Or, this can be a phrase if desired)
+# Player guesses the word/phrase.
 # Guesses are limited to some number that is related to the length of the word.
 # Repeated guesses do not count against the user.
 # The Guessing user receives continual feedback. For each letter in the guessed word:
   # If that letter exists in the secret word, show that letter at its position in the secret word
   # If that letter does not exist in the secret word, show an underscore.
+# The user should get a congratulatory message if they win, and a taunting message if they lose.
 
 
+# PSEUDOCODE
 
-  # PSEUDOCODE
+# Creator can make a new game by calling word_guesser.new
 
-  # Create a class for the game "Word_Guess"
+# Player can ask the word_guesser how many guesses are left
+  # Game will respond with either how many guesses are left or that "This game is over!"
 
-    # Declare attr_ keywords
-      # attr_writer :secret_word 
-      # attr_accessor :guesses_left 
+# Player can make a guess
+  
+  # If there are no more guesses left
+    # Game responds with "The game is over."
 
-    # Initialize the game with the required instance variables.
-      # @secret_word (empty until user_one provides it)
-      # @guesses_left (empty until user_one provides the secret word)
-      # @guessed_words (empty array)
-      # @secret_dashes = "_ "*secret_word.length
-      # @letters_exist = false (if the user's guesses letters' match any in the secret word)
-      # @feedback = nil the feedback returned to the user after each guess
-
-
-    
-    # Ask user_one for a secret word
-      # If the provided string is 1 or less characters, ask for a word containing at least 2 letters.
-    
-    # When a valid secret word has been provided:
-      # Set the secret_word instance variable (attr_writer)
-      # Set the guesses left to equal the length of the secret word string.(attr_accessor)
-      # Print a message indicating that the game has begun! 
-      # Print "The secret word is @secret_dashes" (an underscore followed by a space for each letter)
-
-    # In a loop while guesses_left > 0
-      # @letters_exist = false
-      # @feedback = ""
-
-      # Ask user_two to guess the word: "What's the word?" and the number of @guesses_left
-        # If the guess == the @secret_word
-          # Puts "Congratulations! You guessed the word! User 2 wins"
-          # Break
-
-        # Elsif the guess is in @guessed_words
-          # Print "You already guessed that word!"
-          # Print "The secret word is @secret_dashes (an underscore followed by a space for each letter)
-
-        # Else  
-          # Add the guess to @guessed_words
-          # Subtract one from @guesses_left
-
-          # Compare the unique letters from the guess one by one against each letter in the @secret_word:
-            # If the letter matches:
-              # add the letter followed by a " " to the @feedback string
-              # set @letters_exist = true
-
-            # If the letter doesn't match:
-              # add an underscore followed by a " " to the @feedback string
-
-          # If @letters_exist = true
-            # Print "Hey, looks like some of the letters you wrote are part of the secret word":
-            # Print @feedback
-          # Else
-            # Print "Nope, sorry. The secret word is @secret_dashes
-
-    # Print "User One wins!! Sorry User Two, a loser is you! :^("
+  # If they guessed the word: 
+    # Game responds with "Congratulations! You guessed the word in (n) many guesses.
+  
+  # If they already guessed the word:
+    # Game responds with "You already guessed that word!"
+    # The game gives feedback:
+      # If some characters are right:
+        # Game responds with "Looks like you got some parts right..."
+        # Game gives feedback for each character in secret word:
+          # Dash for characters that aren't in guessed word.
+          # Show the character if it exists in secret word.
+      # If no characters are right:
+        # Game responds with: "The guess is wrong!"
+        # Game gives feedback for each character in secret word:
+          # Dash for characters that aren't in guessed word.
+  
+  # Otherwise:
+    # Game adds the guessed word to an array of guessed words
+    # Game subtracts 1 from the guesses left.
+      # If the number of guesses left is zero, 
+        # Game responds with "Game over! Game explodes. Bye Bye."
+      # Otherwise, the game gives feedback:
+        # If some characters are right:
+          # Game responds with "Looks like you got some parts right..."
+          # Game gives feedback for each character in secret word:
+            # Dash for characters that aren't in guessed word.
+            # Show the character if it exists in secret word.
+        # If no characters are right:
+          # Game responds with: "The guess is wrong!"
+          # Game gives feedback for each character in secret word:
+            # Dash for characters that aren't in guessed word.
 
 
 

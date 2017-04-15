@@ -1,21 +1,3 @@
-# Word-guessing game requirements:
-
-# Driver code should provide input and output. 
-  # i.e. write a class for a computer to use, not a human
-  # Driver code bridges gap between user and ruby object.
-
-# Game creator enters a word. (Or, this can be a phrase if desired)
-# Player guesses the word/phrase.
-# Guesses are limited to some number that is related to the length of the word.
-# Repeated guesses do not count against the user.
-# The Guessing user receives continual feedback. For each letter in the guessed word:
-  # If that letter exists in the secret word, show that letter at its position in the secret word
-  # If that letter does not exist in the secret word, show an underscore.
-# The user should get a congratulatory message if they win, and a taunting message if they lose.
-
-
-# PSEUDOCODE
-
 # Creator can make a new game by calling Word_guesser.new
 class Word_Guesser
 
@@ -33,6 +15,7 @@ class Word_Guesser
     p "The game has begun!!"
 
   end
+
 
   def feedback(word)
     feedback = ""
@@ -58,6 +41,7 @@ class Word_Guesser
     }
     return feedback
   end
+
 
   # Player can ask the word_guesser how many guesses are left.
   def get_guesses_left
@@ -126,7 +110,7 @@ class Word_Guesser
 end # end class
 
 
-DRIVER CODE
+# DRIVER CODE
 myGame = Word_Guesser.new("Brontosaurus")
 
 myGame.get_guesses_left
@@ -157,9 +141,3 @@ newGame.make_guess("rstlne")
 newGame.make_guess("aeiou")
 newGame.make_guess("computer")
 newGame.make_guess("does")
-
-
-
-
-
-

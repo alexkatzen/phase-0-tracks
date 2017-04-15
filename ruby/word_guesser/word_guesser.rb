@@ -100,7 +100,7 @@ class Word_Guesser
 
       else
         get_guesses_left
-
+        
       end # control flow/guessed_word
     
     end # end control flow/make_guess
@@ -132,7 +132,7 @@ puts ""
 puts "* "*20
 puts ""
 
-newGame = Word_Guesser.new("Bill")
+newGame = Word_Guesser.new("Bill Gates")
 
 newGame.get_guesses_left
 puts ""
@@ -140,4 +140,4 @@ newGame.make_guess("a")
 newGame.make_guess("rstlne")
 newGame.make_guess("aeiou")
 newGame.make_guess("computer")
-newGame.make_guess("does")
+newGame.make_guess("bill gates")

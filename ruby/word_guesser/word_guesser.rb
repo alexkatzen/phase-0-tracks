@@ -126,7 +126,7 @@ class Word_Guesser
 end # end class
 
 
-# DRIVER CODE
+DRIVER CODE
 myGame = Word_Guesser.new("Brontosaurus")
 
 myGame.get_guesses_left

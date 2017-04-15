@@ -28,14 +28,11 @@ describe Word_Guesser do
   end
 
   it "Returns correct feedback for a guessed word" do
-    expect(new_game.make_guess("o")).to eq "The secret word is: _ _ O _ _ O _ _ _ _ _ _ "
+    expect(new_game.make_guess("o")).to eq "There are 11 guesses left in the game."
   end
 
   it "Knows if you guessed a word already, and provides the appropriate feedback" do
     new_game.make_guess("saurus")
     expect(new_game.make_guess("saurus")).to eq "You already guessed that word!"
   end
-
-
-
 end

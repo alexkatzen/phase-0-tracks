@@ -1,4 +1,4 @@
-# Creator can make a new game by calling Word_guesser.new
+# Creator can make a new game by calling Word_Guesser.new
 class Word_Guesser
 
   # Declare any attr attributes
@@ -16,7 +16,7 @@ class Word_Guesser
 
   end
 
-
+  # Method to get feedback
   def feedback(word)
     feedback = ""
 

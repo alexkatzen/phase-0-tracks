@@ -110,3 +110,22 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  # -- The first, outer hash uses strings for keys and nested hashes for values. Its syntax matches keys to values by using hash rockets.
+  # -- The second, inner hash syntax matches keys to values using symbols directly followed by integers and floats for values.
+
+# What does require_relative do? How is it different from require?
+  # -- require_relative loads external files relative to the location that the file calling it resides.
+  # -- require is used to load ruby extensions and libraries.
+
+# What are some ways to iterate through a hash?
+  # -- Iterating over each item in the hash for each key e.g. <hash>.each do |key| end
+  # -- Iterating over each key and its corresponding value e.g. <hash>.each do |key, value| end
+  # -- Iterating over each value using each_value e.g. <hash>.each_value { |value| puts value }
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+  # -- That it was unnecessarily passing in the class's instance variables (they were already being called within the methods that virus_effects was calling).
+
+# What concept did you most solidify in this challenge?
+  # -- Use of instance variables.

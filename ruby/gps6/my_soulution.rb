@@ -98,15 +98,14 @@ end
 # alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 # alaska.virus_effects
 
-# PSEUDOCODE TO CREATE REPORT FOR 50 STATES:
 
-# Iterate over STATE_DATA
+# PSEUDOCODE TO CREATE REPORT FOR 50 STATES:
+# Create a new VirusPredictor object, use the STATE_DATA to populate its arguments (state_of_origin, population_density, population)
+  # Run virus_effects
+  # Iterate over STATE_DATA
+
 STATE_DATA.each do |state, pop|
   VirusPredictor.new(state, pop[:population_density], pop[:population]).virus_effects
-
-  # Create a new VirusPredictor object, use the STATE_DATA to populate its arguments (state_of_origin, population_density, population)
-  # Run virus_effects
-
 end
 
 #=======================================================================

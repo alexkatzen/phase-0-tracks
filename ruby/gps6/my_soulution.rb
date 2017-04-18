@@ -53,7 +53,7 @@ class VirusPredictor
       number_of_deaths(0.4)
     end
 
-    print "#{@state} will lose #{deaths} people in this outbreak"
+    print "#{@state} will lose #{d} people in this outbreak"
 
   end
 

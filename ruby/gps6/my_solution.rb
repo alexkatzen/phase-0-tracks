@@ -35,20 +35,22 @@ class VirusPredictor
   def predicted_deaths
     # predicted deaths is solely based on population density
     
+    d = nil
+
     def number_of_deaths(factor)
-      (@population * factor).floor
+      d = (@population * factor).floor
     end
 
     if @population_density >= 200
-      d = number_of_deaths(0.4)
+      number_of_deaths(0.4)
     elsif @population_density >= 150
-      d = number_of_deaths(0.3)
+      number_of_deaths(0.3)
     elsif @population_density >= 100
-      d = number_of_deaths(0.2)
+      number_of_deaths(0.2)
     elsif @population_density >= 50
-      d = number_of_deaths(0.1)
+      number_of_deaths(0.1)
     else
-      d = number_of_deaths(0.4)
+      number_of_deaths(0.4)
     end
 
     print "#{@state} will lose #{d} people in this outbreak"

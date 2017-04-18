@@ -3,7 +3,6 @@
 
 # The "Hashy Hash"
 
-
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
   "Alaska" => {population_density: 1.1111, population: 731449},

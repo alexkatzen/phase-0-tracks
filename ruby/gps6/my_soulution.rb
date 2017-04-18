@@ -5,7 +5,11 @@
 
 # EXPLANATION OF require_relative
 #
-#
+
+# require vs require_relative:
+
+# require_relative is used when you want to target any directly associated files with the project.
+# require is used when loading files within the ruby root directory e.g. loading pre-installed gems, built-in libraries, parts of ruby that aren't automatically loaded.
 require_relative 'state_data'
 
 class VirusPredictor

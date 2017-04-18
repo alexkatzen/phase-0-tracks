@@ -1,6 +1,8 @@
 #population density is number of people per square mile as of 2012
 #this data is updated every year with estimates from a 10 year census
 
+# The "Hashy Hash"
+
 
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},

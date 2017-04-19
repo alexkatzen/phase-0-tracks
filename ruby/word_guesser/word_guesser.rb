@@ -9,11 +9,9 @@ class Word_Guesser
   def initialize(secret_word)
     @secret_word = secret_word.upcase 
     @guesses_left = secret_word.length
-    @guess = nil
     @number_of_guesses = 0
     @guessed_words = []
     p "The game has begun!!"
-
   end
 
   # Method to get feedback
@@ -37,11 +35,9 @@ class Word_Guesser
       if letter_exits == false
         feedback << "_ "
       end
-
     }
     return feedback
   end
-
 
   # Player can ask the word_guesser how many guesses are left.
   def get_guesses_left
@@ -59,19 +55,11 @@ class Word_Guesser
   def make_guess(word)
     guess = word.upcase
     
-
-    # If there are no more guesses left
     if @guesses_left == 0
-      
-      # Game responds with "The game is over."
       p "This game is over!"
 
-    # If they guessed the word:
     elsif guess == @secret_word
-      
       @number_of_guesses += 1
-
-      # Game responds with "Congratulations! You guessed the word in (n) many guesses.
       p "Congratulations! You got the word in #{@number_of_guesses} guesses!"
       
     # else if they already guessed the word:
@@ -80,10 +68,8 @@ class Word_Guesser
       p "The secret word is: " + feedback(guess)
       return "You already guessed that word!"
 
-    # Otherwise:
     else
 
-      # Game adds the guessed word to an array of guessed words
       @guessed_words.push(guess)
       @number_of_guesses += 1
       @guesses_left -= 1
@@ -92,21 +78,15 @@ class Word_Guesser
       p "Correct letters:"
       p feedback(guess)
 
-      # If the number of guesses left is zero,
       if @guesses_left == 0
         p "That was your last guess! Game over."
-
-      # Otherwise, the game gives feedback:
 
       else
         get_guesses_left
         
       end # control flow/guessed_word
-    
     end # end control flow/make_guess
-
   end # end make_guess
-
 end # end class
 
 

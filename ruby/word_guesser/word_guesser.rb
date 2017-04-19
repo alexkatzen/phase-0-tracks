@@ -1,4 +1,4 @@
-# Creator can make a new game by calling Word_Guesser.new
+# Creator can make a new game by calling Word_Guesser.new and passing in a secret word
 class Word_Guesser
 
   # Declare any attr attributes
@@ -55,29 +55,32 @@ class Word_Guesser
   def make_guess(word)
     guess = word.upcase
     
+    # If the game is over, let the player know.
     if @guesses_left == 0
       p "This game is over!"
 
+    # Congratulatory message if they got it.
     elsif guess == @secret_word
       @number_of_guesses += 1
       p "Congratulations! You got the word in #{@number_of_guesses} guesses!"
       
-    # else if they already guessed the word:
+    # If they already guessed the word:
     elsif @guessed_words.index(guess) != nil
       p "You already guessed that word!"
       p "The secret word is: " + feedback(guess)
       return "You already guessed that word!"
 
+    # Count the guess and provide feedback on it.
     else
 
       @guessed_words.push(guess)
       @number_of_guesses += 1
       @guesses_left -= 1
-
-      # Show the user how many letters in their guessed word are in the secret word
+      
       p "Correct letters:"
       p feedback(guess)
 
+      # If that was the last guess, let the player know.
       if @guesses_left == 0
         p "That was your last guess! Game over."
 

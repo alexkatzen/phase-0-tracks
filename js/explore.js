@@ -10,8 +10,12 @@ function reverse(word) {
     //add character to reversedWord
     reversedWord += word.charAt(i)
   }
-  
+
   return reversedWord
 }
 
-console.log(reverse("Crystal"));
+backwards = reverse("inverted")
+
+if ("inverse" == "inverse") {
+  console.log(backwards)
+}

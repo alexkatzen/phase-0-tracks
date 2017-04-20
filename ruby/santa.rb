@@ -38,6 +38,7 @@ end
 
 # DRIVER CODE
 mortimer = Santa.new("male", "n/a")
+mortimer.speak
 mortimer.eat_milk_and_cookies("Oatmeal")
 
 genders = ["Female", "Male", "Androgynous", "Non-binary", "Spirit", "Other"]

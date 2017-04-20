@@ -8,14 +8,14 @@ function reverse(word) {
   //in a loop, iterate through the given word starting at the end
   for (i = wordLength-1; i>=0; i--) { 
     //add character to reversedWord
-    reversedWord += word.charAt(i)
+    reversedWord += word.charAt(i);
   }
 
-  return reversedWord
+  return reversedWord;
 }
 
-backwards = reverse("inverted")
+backwards = reverse("inverted");
 
 if ("inverse" == "inverse") {
-  console.log(backwards)
+  console.log(backwards);
 }

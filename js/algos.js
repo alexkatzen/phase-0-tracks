@@ -38,7 +38,7 @@ function longest(arr) {
 // Declare a function that takes in two objects: 'object1', 'object2'
   // Create a variable 'match' and set it to false.
   // Loop through object1. For each KEY:
-    // loop through object2:
+    // Loop through object2:
       // If (object1's KEY == object2's [KEY2]) _AND_ (the value at object1[KEY] == the value at object2[KEY2])
         // set match to true
   // return match
@@ -52,7 +52,7 @@ function findMatch(object1, object2) {
   // Loop through object1. For each KEY:
   for (var key1 in object1) {
 
-    // loop through object2 to see if it's key matches AND the value at its key matches the value currently at object1[key1].
+    // loop through object2 to see if its key matches AND the value at its key matches the value currently at object1[key1].
     for (var key2 in object2) {
       if (key1 == key2 && object1[key1] == object2[key2]) {
         match = true;
@@ -63,6 +63,22 @@ function findMatch(object1, object2) {
 
   return match
 }
+
+
+// RELEASE 2 - - - - - - - - - - - - - - - - - - - -
+// Write a function that takes an integer and returns an array with that many items. Each item should be a string of random characters and should also have a random length between 1 and 10.
+
+// Pseudocode
+// Declare a function that takes an integer.
+  // Create a variable 'randomWords' and assign it an empty array.
+  // Create a variable 'alphabet' assigned with a string containing the alphabet.
+  // In a loop that runs the amount of times indicated by the integer:
+    // Create an variable 'word' and assign it an empty string.
+    // In a loop that runs (random 1-10) times:
+      // Pick a letter from 'alphabet' and add it to 'word'.
+    // push the word to 'randomWords'.
+  // Return randomWords.
+
 
 
 

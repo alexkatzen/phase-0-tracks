@@ -102,3 +102,17 @@ console.log(car3);
 car3.describeSelf();
 car3.isOld();
 car3.amIOperational();
+
+// experimenting with looping through keys, values of an object
+for (var key in car3) {
+  console.log("The key is " + key);
+  console.log("The value is " + car3[key]);
+}
+
+// Advantages to using a a constructor function:
+  // Ability to create many objects that share the same properties.
+  // Persistence of the function.
+
+// Disadvantages:
+  // More code to write.
+  // Requires having to use 'New' to create the objects.

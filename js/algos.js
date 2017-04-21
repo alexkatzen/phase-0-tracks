@@ -44,12 +44,39 @@ function longest(arr) {
   // return match
 
 
+// Declare a function that takes in two objects: 'object1', 'object2'
+function findMatch(object1, object2) {
+
+  var match = false;
+
+  // Loop through object1. For each KEY:
+  for (var key1 in object1) {
+
+    // loop through object2 to see if it's key matches AND the value at its key matches the value currently at object1[key1].
+    for (var key2 in object2) {
+      if (key1 == key2 && object1[key1] == object2[key2]) {
+        match = true;
+      };
+    };
+
+  };
+
+  return match
+}
+
 
 
 // DRIVER CODE:  - - - - - - - - - - - - - - - - - - - -
 
-//RELEASE 0
-console.log(longest(myArray1));
-console.log(longest(myArray2));
-console.log(longest(myArray3));
-console.log(longest(myArray4));
+  // RELEASE 0
+  console.log(longest(myArray1));
+  console.log(longest(myArray2));
+  console.log(longest(myArray3));
+  console.log(longest(myArray4));
+
+
+  // RELEASE 1
+  console.log(findMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+  console.log(findMatch({name: "Steven", age: 54}, {name: "Tamir", age: 53}));
+  console.log(findMatch({lastName: "Tamir", dogs: 2, from: "San Francisco"}, {firstName: "Tamir", cats: 2, from: "New York"}));
+  console.log(findMatch({lastName: "Tamir", cats: 2, from: "San Francisco"}, {firstName: "Tamir", cats: 2, from: "New York"}));

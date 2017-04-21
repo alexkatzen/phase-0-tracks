@@ -71,7 +71,7 @@ function findMatch(object1, object2) {
 // Pseudocode
 // Declare a function that takes an integer.
   // Create a variable 'randomWords' and assign it an empty array.
-  // Create a variable 'alphabet' assigned with a string containing the alphabet.
+  // Create a variable 'randomWords' and assign it an empty array.
   // In a loop that runs the amount of times indicated by the integer:
     // Create an variable 'word' and assign it an empty string.
     // In a loop that runs (random 1-10) times:
@@ -79,8 +79,33 @@ function findMatch(object1, object2) {
     // push the word to 'randomWords'.
   // Return randomWords.
 
+function randomness(count) {
 
+  var randomWords = [];
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
+  // Function to generate a random number between a range
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  for (count; count>0 ; count--) {
+    word = "";
+
+    // In a loop that runs (random 1-10) times:
+    for (var i=Math.floor(Math.random()*10)+1; i>0; i--) {
+
+      //add a random letter from the alphabet to the word
+      word += alphabet[getRandomInt(0,26)];
+    }
+
+    randomWords.push(word);
+  }
+
+  return randomWords;
+}
 
 // DRIVER CODE:  - - - - - - - - - - - - - - - - - - - -
 
@@ -90,9 +115,18 @@ function findMatch(object1, object2) {
   console.log(longest(myArray3));
   console.log(longest(myArray4));
 
-
   // RELEASE 1
   console.log(findMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
   console.log(findMatch({name: "Steven", age: 54}, {name: "Tamir", age: 53}));
   console.log(findMatch({lastName: "Tamir", dogs: 2, from: "San Francisco"}, {firstName: "Tamir", cats: 2, from: "New York"}));
   console.log(findMatch({lastName: "Tamir", cats: 2, from: "San Francisco"}, {firstName: "Tamir", cats: 2, from: "New York"}));
+
+  // RELEASE 2
+  console.log(randomness(2));
+  console.log(randomness(10));
+
+  // RELEASE 2 / Do the thing - Question 2
+  for (var i=10 ; i>0 ; i--) {
+    console.log( longest(randomness(10)) );
+  }
+

@@ -21,12 +21,9 @@ console.log(horseNames);
 //PSEUDOCODE
 // create a function that takes in both arrays of the same length (keys_array and values_array)
   // if keys_array and values_array are not the same length, return an error.
-
   // create a variable 'newObject' to hold the object that we create.
-
   // loop through the keys_array from the beginning to the end.
     // for each item in the keys array, assign that item as a key who's value is the corresponding item in the value array.
-
   // return the newObject
 
 
@@ -54,3 +51,54 @@ function makeRanch(horses, colors) {
 }
 
 console.log(makeRanch(horseNames, colors));
+
+function Car(type, maker, color, milage, runs) {
+  this.type = type;
+  this.maker = maker;
+  this.color = color;
+  this.milage = milage;
+  this.runs = runs;
+
+  this.describeSelf = function() {
+    console.log("Hey! I'm a " + color + " " + type + " made by " + maker);
+  }
+
+  this.isOld = function() {
+    if (this.milage < 10000) {
+      console.log("I'm still a new car");
+    } else if (this.milage < 60000) {
+      console.log("I'm not that old!");
+    } else {
+      console.log("I'm an old jalopy.");
+    };
+  }
+
+  this.amIOperational = function() {
+    if (runs === true) {
+      console.log("Yes, I am operational!!");
+    } else {
+      console.log("Something's up with me :(");
+    }
+  }
+
+}
+
+var car1 =  new Car("sedan", "BMW", "Black", 7, true);
+console.log(car1);
+car1.describeSelf();
+car1.isOld();
+car1.amIOperational();
+
+console.log("- - - - - - - - ")
+var car2 =  new Car("pickup truck", "Toyota", "Green", 54245, true);
+console.log(car2);
+car2.describeSelf();
+car2.isOld();
+car2.amIOperational();
+
+console.log("- - - - - - - - ")
+var car3 =  new Car("mini-bus", "Volkswagen", "yellow", 233948, false);
+console.log(car3);
+car3.describeSelf();
+car3.isOld();
+car3.amIOperational();

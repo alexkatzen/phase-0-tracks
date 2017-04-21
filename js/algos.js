@@ -71,7 +71,6 @@ function findMatch(object1, object2) {
 // Pseudocode
 // Declare a function that takes an integer.
   // Create a variable 'randomWords' and assign it an empty array.
-  // Create a variable 'randomWords' and assign it an empty array.
   // In a loop that runs the amount of times indicated by the integer:
     // Create an variable 'word' and assign it an empty string.
     // In a loop that runs (random 1-10) times:

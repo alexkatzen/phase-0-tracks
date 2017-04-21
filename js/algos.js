@@ -1,4 +1,4 @@
-// RELEASE 0
+// RELEASE 0 - - - - - - - - - - - - - - - - - - - -
 // write a function that takes an array of words/phrases and returns the longest one.
 
 // Pseudocode
@@ -31,7 +31,24 @@ function longest(arr) {
   return longestWord;
 }
 
-// DRIVER CODE
+// RELEASE 1 - - - - - - - - - - - - - - - - - - - -
+// Write a function that takes two objects and checks to see if the objects share at least one key-value pair.
+
+// Pseudocode
+// Declare a function that takes in two objects: 'object1', 'object2'
+  // Create a variable 'match' and set it to false.
+  // Loop through object1. For each KEY:
+    // loop through object2:
+      // If (object1's KEY == object2's [KEY2]) _AND_ (the value at object1[KEY] == the value at object2[KEY2])
+        // set match to true
+  // return match
+
+
+
+
+// DRIVER CODE:  - - - - - - - - - - - - - - - - - - - -
+
+//RELEASE 0
 console.log(longest(myArray1));
 console.log(longest(myArray2));
 console.log(longest(myArray3));

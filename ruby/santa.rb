@@ -12,8 +12,6 @@ class Santa
   attr_reader :ethnicity, :reindeer_ranking
   attr_accessor :gender, :age
 
-  attr_writer
-
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
   end

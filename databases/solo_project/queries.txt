@@ -115,3 +115,123 @@ DELETE FROM commercial_aircraft WHERE model = "E190-E2";
 OUTPUT:
 
 (none)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+RELEASE 3: Research on Your Own
+
+
+QUERY using LEFT/OUTER JOIN: 
+
+SELECT commercial_aircraft.model, commercial_aircraft.first_flight, manufacturer.name FROM commercial_aircraft LEFT JOIN manufacturer ON manufacturer.id = commercial_aircraft.manufacturer_id ORDER BY commercial_aircraft.manufacturer_id;
+
+OUTPUT:
+
+AK-78|1978-01-21|
+AK-100|2017-04-26|
+A380|2005-04-27|Airbus
+A330|1992-11-02|Airbus
+747-8|2010-02-08|Boeing
+777-200|1994-06-12|Boeing
+EMB-120 Brasilia|1983-07-27|Embraer
+DC-10|1970-08-29|McDonnell Douglas
+MD-11|1990-01-10|McDonnell Douglas
+
+* * * * *
+
+QUERY using CROSS JOIN:
+
+SELECT commercial_aircraft.model, manufacturer.name FROM commercial_aircraft, manufacturer;
+
+OUTPUT:
+
+A380|Airbus
+A380|Boeing
+A380|Embraer
+A380|McDonnell Douglas
+A330|Airbus
+A330|Boeing
+A330|Embraer
+A330|McDonnell Douglas
+747-8|Airbus
+747-8|Boeing
+747-8|Embraer
+747-8|McDonnell Douglas
+777-200|Airbus
+777-200|Boeing
+777-200|Embraer
+777-200|McDonnell Douglas
+EMB-120 Brasilia|Airbus
+EMB-120 Brasilia|Boeing
+EMB-120 Brasilia|Embraer
+EMB-120 Brasilia|McDonnell Douglas
+DC-10|Airbus
+DC-10|Boeing
+DC-10|Embraer
+DC-10|McDonnell Douglas
+MD-11|Airbus
+MD-11|Boeing
+MD-11|Embraer
+MD-11|McDonnell Douglas
+AK-78|Airbus
+AK-78|Boeing
+AK-78|Embraer
+AK-78|McDonnell Douglas
+AK-100|Airbus
+AK-100|Boeing
+AK-100|Embraer
+AK-100|McDonnell Douglas
+
+* * * * *
+
+QUERY using SELF JOIN:
+
+SELECT x.first_flight, y.first_flight FROM commercial_aircraft x JOIN commercial_aircraft y ON y.first_flight < 1995-01-01;
+
+OUTPUT:
+
+2005-04-27|1992-11-02
+1992-11-02|1992-11-02
+2010-02-08|1992-11-02
+1994-06-12|1992-11-02
+1983-07-27|1992-11-02
+1970-08-29|1992-11-02
+1990-01-10|1992-11-02
+1978-01-21|1992-11-02
+2017-04-26|1992-11-02
+2005-04-27|1983-07-27
+1992-11-02|1983-07-27
+2010-02-08|1983-07-27
+1994-06-12|1983-07-27
+1983-07-27|1983-07-27
+1970-08-29|1983-07-27
+1990-01-10|1983-07-27
+1978-01-21|1983-07-27
+2017-04-26|1983-07-27
+2005-04-27|1970-08-29
+1992-11-02|1970-08-29
+2010-02-08|1970-08-29
+1994-06-12|1970-08-29
+1983-07-27|1970-08-29
+1970-08-29|1970-08-29
+1990-01-10|1970-08-29
+1978-01-21|1970-08-29
+2017-04-26|1970-08-29
+2005-04-27|1990-01-10
+1992-11-02|1990-01-10
+2010-02-08|1990-01-10
+1994-06-12|1990-01-10
+1983-07-27|1990-01-10
+1970-08-29|1990-01-10
+1990-01-10|1990-01-10
+1978-01-21|1990-01-10
+2017-04-26|1990-01-10
+2005-04-27|1978-01-21
+1992-11-02|1978-01-21
+2010-02-08|1978-01-21
+1994-06-12|1978-01-21
+1983-07-27|1978-01-21
+1970-08-29|1978-01-21
+1990-01-10|1978-01-21
+1978-01-21|1978-01-21
+2017-04-26|1978-01-21
+

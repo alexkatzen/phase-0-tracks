@@ -35,8 +35,37 @@ end
 
 # Create a method for viewing all the albums
 get_albums = db.execute("SELECT * FROM albums")
+
+# Select only the hash elements needed
 album_list = get_albums[0].keep_if{|key, value| key.class == String}
 
+# Print a heading for the album details
+def album_heading(hash)
+
+  # create a variable to hold the heading string
+  heading = ""
+
+  # For each Key in the hash:
+  hash.each do |key, value|
+    heading += "| "
+    spaces_left = 24
+
+    # Iterate through each character in that key
+    key.each_char do |c|
+      heading += c
+      spaces_left -=1
+    end
+
+    # Add a spaces remaining in counter
+    while spaces_left > 0
+      heading += " "
+      spaces_left -=1
+    end
+  end
+  return heading
+end
+
+puts album_heading(album_list)
 
 album_list.each do |key, value|
   p "#{key} : #{value}"
@@ -113,11 +142,6 @@ end
 
 
 # DRIVER CODE:
-# Create a interface that offers a menu of things to do:
-  # See the album collection
-  # Add an album to the collection
-  # Edit an album in the collection
-
 loop do
   puts ""
   puts ""

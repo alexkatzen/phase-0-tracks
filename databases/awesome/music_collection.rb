@@ -34,9 +34,16 @@ def add_album(db, album_name, artist, genre, year_released)
 end
 
 # Create a method for viewing all the albums
-albums = db.execute("SELECT * FROM albums")
-albums.class
-p albums
+get_albums = db.execute("SELECT * FROM albums")
+album_list = get_albums[0].keep_if{|key, value| key.class == String}
+
+
+album_list.each do |key, value|
+  p "#{key} : #{value}"
+end
+
+
+
 
 
 # Method to create an album

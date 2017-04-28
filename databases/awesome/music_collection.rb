@@ -25,7 +25,9 @@ db.execute(create_albums_table)
 db.execute( "INSERT INTO albums(album_name, artist, genre, year_released, date_added) VALUES ('Still Waters Run Deep', 'FourTops', 'Soul', 1970, 1231231)" )
 
 def add_album(db, album_name, artist, genre, year_released)
-  db.execute("INSERT INTO albums(album_name, artist, genre, year_released) VALUES (?, ?, ?, ?)", [album_name, artist, genre, year_released])
+  date_added = Time.new.to_s
+
+  db.execute("INSERT INTO albums(album_name, artist, genre, year_released, date_added) VALUES (?, ?, ?, ?, ?)", [album_name, artist, genre, year_released, date_added])
 end
 
 

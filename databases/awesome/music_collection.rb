@@ -7,6 +7,9 @@ require 'faker'
 # create the SQLite3 database
 db = SQLite3::Database.new("music.db")
 
+# setting an instance attribute method on our database instance to return hashes when queried (ORM)
+db.results_as_hash = true
+
 # create a table to hold albums
 create_albums_table = <<-SQL
   CREATE TABLE IF NOT EXISTS albums(
@@ -31,6 +34,10 @@ def add_album(db, album_name, artist, genre, year_released)
 end
 
 # Create a method for viewing all the albums
+albums = db.execute("SELECT * FROM albums")
+albums.class
+p albums
+
 
 # Method to create an album
 def create_album(db)
@@ -84,7 +91,7 @@ def create_album(db)
       puts "What year was this album released?"
       album["year released"] = gets.chomp
     when 'add'
-      add_album(db, album["album name"], album["artist"], album["genre"], album["year_released"])
+      add_album(db, album["album name"], album["artist"], album["genre"], album["year released"])
       editing = false
     when 'q'
       editing = false

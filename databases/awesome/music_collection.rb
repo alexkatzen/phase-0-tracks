@@ -36,10 +36,15 @@ end
 # Create a method for viewing all the albums
 get_albums = db.execute("SELECT * FROM albums")
 
-# Select only the hash elements needed
-album_list = get_albums[0].keep_if{|key, value| key.class == String}
+# Clean up each of the hashes returned
+get_albums.each do |album_hash|
+  album_hash.keep_if{|key, value| key.class == String}
+end
 
-# Print a heading for the album details
+# Get the first hash to pass into the heading method
+first_hash = get_albums[0]
+
+# Method to make a heading
 def album_heading(hash)
 
   # create a variable to hold the heading string
@@ -56,7 +61,7 @@ def album_heading(hash)
       spaces_left -=1
     end
 
-    # Add a spaces remaining in counter
+    # Add spaces remaining in counter
     while spaces_left > 0
       heading += " "
       spaces_left -=1
@@ -65,14 +70,23 @@ def album_heading(hash)
   return heading
 end
 
-puts album_heading(album_list)
+puts album_heading(first_hash)
 
-album_list.each do |key, value|
-  p "#{key} : #{value}"
+# Create a method that takes in an array (takes in the array of hashes)
+def list_albums(arr)
+# For each hash in the array
+  # Iterate through the hash (each album):
+    # Create a variable to hold the row string
+    #row = ""
+    # For each key, value in the hash:
+      # row += "|"
+      # Set a counter to keep track of spaces left
+      # Iterate through each character in the key's value
+        # add the character to the row string
+        # subtract 1 from the counter
+      # Add spaces remaining in counter
+    # Return the row
 end
-
-
-
 
 
 # Method to create an album

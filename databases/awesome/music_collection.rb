@@ -2,6 +2,7 @@
 
 # require gems
 require 'sqlite3'
+require 'faker'
 
 # create the SQLite3 database
 db = SQLite3::Database.new("music.db")
@@ -21,26 +22,22 @@ SQL
 db.execute(create_albums_table)
 
 # add a test album
-db.execute( "INSERT INTO albums(album_name, artist, genre, year_released, date_added) VALUES ('Still Waters Run Deep', 'FourTops', 'Soul', 1970, 1231231)" )
+# db.execute( "INSERT INTO albums(album_name, artist, genre, year_released, date_added) VALUES ('Still Waters Run Deep', 'FourTops', 'Soul', 1970, 1231231)" )
 
+# Method to add an album
 def add_album(db, album_name, artist, genre, year_released)
   date_added = Time.new.to_s[0..18]
-
   db.execute("INSERT INTO albums(album_name, artist, genre, year_released, date_added) VALUES (?, ?, ?, ?, ?)", [album_name, artist, genre, year_released, date_added])
 end
 
-
 # Create a method for viewing all the albums
-# Create a method for adding an album
-# Create a method for editing an album
 
+# Method to create an album
+def create_album(db)
 
-while true
-
+  editing = true
   album = { "album name" => nil, "artist" => nil, "genre"=> nil, "year released" => nil }
 
-  puts "Add an album to the collection! (or type 'exit' to quit)"
-  puts ""
   puts "What is the name of the album?"
   album["album name"] = gets.chomp
 
@@ -53,26 +50,78 @@ while true
   puts "What year was this album released"
   album["year released"] = gets.chomp
 
-  puts ""
-  puts "Here's the album as entered so far:"
-  puts ""
+  while editing != false
+    puts ""
+    puts "Here's the album as entered so far:"
+    puts ""
 
-  album.keys.each_with_index do |info, index|
-    puts "#{index} - #{info.upcase}... #{album[info]}"
-  end
-  # About each_with_index: https://apidock.com/ruby/Enumerable/each_with_index
+    album.keys.each_with_index do |info, index|
+      puts "#{index} - #{info.upcase}... #{album[info]}"
+    end
+    # About each_with_index: https://apidock.com/ruby/Enumerable/each_with_index
+    puts ""
 
-  puts ""
-  puts "To add the album as-is, type 'add', to make edits type 'edit', otherwise type 'x' to start over"
-  answer = gets.chomp.downcase
+    # puts "To add the album as-is, type 'add'. Or, type the number of the info you want to edit. otherwise type 'q' to quit without saving."
+    puts "Type 'add' to save the album as shown"
+    puts ""
+    puts "OR:"
+    puts ""
+    puts "Type the number of the detail you would like to edit"
+    puts "Type 'q' to quit the album adder without saving"
 
-  # add the album to the db
-  add_album(db, album["album name"], album["artist"], album["genre"], album["year_released"])
+    answer = gets.chomp.downcase
+    case answer
+    when '0'
+      puts "What is the name of this album?"
+      album["album name"] = gets.chomp
+    when '1'
+      puts "Which artist is this album by?"
+      album["artist"] = gets.chomp
+    when '2'
+      puts "What genre is this album?"
+      album["genre"] = gets.chomp
+    when '3'
+      puts "What year was this album released?"
+      album["year released"] = gets.chomp
+    when 'add'
+      add_album(db, album["album name"], album["artist"], album["genre"], album["year_released"])
+      editing = false
+    when 'q'
+      editing = false
+    end
+  end # end loop
 
 end
+
+# Create a method for editing an album
+
+
+
 
 # DRIVER CODE:
 # Create a interface that offers a menu of things to do:
   # See the album collection
   # Add an album to the collection
   # Edit an album in the collection
+
+loop do
+  puts ""
+  puts ""
+  puts "MUSIC MANAGER v.1 :D!"
+  puts "— "*21
+  puts "What would you like to do?"
+  puts ""
+  puts "type '1' to view your albums"
+  puts "type '2' to add an album"
+
+  answer = gets.chomp
+  case answer
+  when '2'
+    create_album(db)
+  else
+    puts ""
+    puts ""
+    puts "Sorry, I didn't get that."
+    puts Faker::ChuckNorris.fact
+  end
+end

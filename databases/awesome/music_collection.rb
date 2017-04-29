@@ -33,13 +33,18 @@ def add_album(db, album_name, artist, genre, year_released)
   db.execute("INSERT INTO albums(album_name, artist, genre, year_released, date_added) VALUES (?, ?, ?, ?, ?)", [album_name, artist, genre, year_released, date_added])
 end
 
-# Create a method for viewing all the albums
-get_albums = db.execute("SELECT * FROM albums")
-
-# Clean up each of the hashes returned
-get_albums.each do |album_hash|
-  album_hash.keep_if{|key, value| key.class == String}
+# Create a function to get current albums
+def get_current_albums(db)
+  get_albums = db.execute("SELECT * FROM albums")
+  # Clean up each of the hashes returned
+  get_albums.each do |album_hash|
+    album_hash.keep_if{|key, value| key.class == String}
+  end
+  return get_albums
 end
+
+get_albums = get_current_albums(db)
+
 
 # Get the first hash to pass into the heading method
 first_hash = get_albums[0]
@@ -97,7 +102,6 @@ end
 
 # Method that lists albums
 def list_albums(arr)
-
   # For each hash in the array
   arr.each do |album_hash|
     make_album_row(album_hash)
@@ -169,28 +173,52 @@ def create_album(db)
 end
 
 # Create a method for editing an album
+def edit_album(db, first_hash, get_albums)
+  album_heading(first_hash)
+  get_albums = get_current_albums(db)
+  list_albums(get_albums)
   # List all the albums in the db
   # Ask the user to enter the id of the album they would like to edit
+  puts "— "*21
+  puts "Please enter the id of the album you want to edit"
+  answer = gets.chomp.to_i
+  selected_album = db.execute("SELECT * FROM albums WHERE id = #{answer}")
+  selected_album[0].keep_if{|key, value| key.class == String}
+  puts ""
+  puts "Here's your album:"
+  selected_album[0].keys.each_with_index do |info, index|
+    puts "#{index} - #{info.to_s.upcase}... #{selected_album[0][info]}"
+  end
   # Show the user just that album
+end
 
 
-
+# album.keys.each_with_index do |info, index|
+#   puts "#{index} - #{info.upcase}... #{album[info]}"
+# end
 
 # DRIVER CODE:
+puts ""
+puts ""
+puts "MUSIC MANAGER v.1 :D!"
 loop do
-  puts ""
-  puts ""
-  puts "MUSIC MANAGER v.1 :D!"
   puts "— "*21
   puts "What would you like to do?"
   puts ""
   puts "type '1' to view your albums"
   puts "type '2' to add an album"
+  puts "type '3' to edit an album"
 
   answer = gets.chomp
   case answer
+  when '1'
+    album_heading(first_hash)
+    get_albums = get_current_albums(db)
+    list_albums(get_albums)
   when '2'
     create_album(db)
+  when '3'
+    edit_album(db, first_hash, get_albums)
   else
     puts ""
     puts ""

@@ -108,9 +108,6 @@ def list_albums(arr)
   end # end array iteration
 end
 
-album_heading(first_hash)
-list_albums(get_albums)
-
 # Method to create an album
 def create_album(db)
 
@@ -181,13 +178,48 @@ def edit_album(db, first_hash, get_albums)
   # Ask the user to enter the id of the album they would like to edit
   puts "— "*21
   puts "Please enter the id of the album you want to edit"
-  answer = gets.chomp.to_i
-  selected_album = db.execute("SELECT * FROM albums WHERE id = #{answer}")
+  album_id = gets.chomp.to_i
+  selected_album = db.execute("SELECT * FROM albums WHERE id = #{album_id}")
   selected_album[0].keep_if{|key, value| key.class == String}
   puts ""
   puts "Here's your album:"
   selected_album[0].keys.each_with_index do |info, index|
     puts "#{index} - #{info.to_s.upcase}... #{selected_album[0][info]}"
+  end
+  puts ""
+  puts "Enter the # of the info to change"
+  puts "OR"
+  puts "type 'x' to DELETE the album"
+  puts "What would you like to do?"
+  answer = gets.chomp
+  case answer
+  when '0'
+    puts ""
+    puts "Sorry, the album id can't be changed."
+  when '1'
+    puts ""
+    puts "What is the name of this album?"
+    answer = gets.chomp
+    db.execute("UPDATE albums SET album_name= \'#{answer}\' WHERE id= \'#{album_id}\'")
+  when '2'
+    puts ""
+    puts "Which artist is this album by?"
+    db.execute("UPDATE albums SET artist= \'#{answer}\' WHERE id= \'#{album_id}\'")
+  when '3'
+    puts ""
+    puts "What genre is this album?"
+    db.execute("UPDATE albums SET genre= \'#{answer}\' WHERE id= \'#{album_id}\'")
+  when '4'
+    puts ""
+    puts "What year was this album released?"
+    db.execute("UPDATE albums SET year= \'#{answer}\' WHERE id= \'#{album_id}\'")
+  when '5'
+    puts ""
+    puts "Sorry, but you can\'t change history!"
+  when 'x'
+    db.execute("DELETE FROM albums WHERE id= \'#{album_id}\'")
+  else
+    puts Faker::ChuckNorris.fact
   end
   # Show the user just that album
 end

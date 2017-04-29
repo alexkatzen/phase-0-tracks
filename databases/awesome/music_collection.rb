@@ -230,7 +230,7 @@ def edit_album(db, first_hash, get_albums)
     puts ""
     puts "What year was this album released?"
     answer = gets.chomp
-    db.execute("UPDATE albums SET year= \'#{answer}\' WHERE id= \'#{album_id}\'")
+    db.execute("UPDATE albums SET year_released= \'#{answer}\' WHERE id= \'#{album_id}\'")
     puts ""
     puts "Release date updated!"
   when '5'

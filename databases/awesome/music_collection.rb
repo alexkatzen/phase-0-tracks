@@ -68,37 +68,39 @@ def album_heading(hash)
     end
   end
   puts heading
+  puts ""
 end
 
+# Method to print album details as a row
+def make_album_row(hsh)
+  # Create an empty row
+  row = ""
 
+  #iterate through each value in the hash creating a column each time
+  hsh.each_value do |value|
+
+    spaces_left = 24
+    row += "| "
+
+    value.to_s.each_char do |c|
+      row += c
+      spaces_left -=1
+    end
+    while spaces_left > 0
+      row += " "
+      spaces_left -=1
+    end
+
+  end # end hash iteration
+  puts row
+end
 
 # Method that lists albums
 def list_albums(arr)
 
   # For each hash in the array
   arr.each do |album_hash|
-
-    # Create an empty row
-    row = ""
-
-    #iterate through each value in the hash creating a column each time
-    album_hash.each_value do |value|
-
-      spaces_left = 24
-      row += "| "
-
-      value.to_s.each_char do |c|
-        row += c
-        spaces_left -=1
-      end
-      while spaces_left > 0
-        row += " "
-        spaces_left -=1
-      end
-
-    end # end hash iteration
-
-    puts row
+    make_album_row(album_hash)
   end # end array iteration
 end
 
@@ -167,6 +169,9 @@ def create_album(db)
 end
 
 # Create a method for editing an album
+  # List all the albums in the db
+  # Ask the user to enter the id of the album they would like to edit
+  # Show the user just that album
 
 
 

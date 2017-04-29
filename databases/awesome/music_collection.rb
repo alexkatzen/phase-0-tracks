@@ -113,21 +113,23 @@ def create_album(db)
 
   editing = true
   album = { "album name" => nil, "artist" => nil, "genre"=> nil, "year released" => nil }
-
-  puts "What is the name of the album?"
+  puts ""
+  puts ""
+  puts "What is the name of the new album?"
   album["album name"] = gets.chomp
-
+  puts ""
   puts "Which artist is this album by?"
   album["artist"] = gets.chomp
-
+  puts ""
   puts "What genre is this album?"
   album["genre"] = gets.chomp
-
+  puts ""
   puts "What year was this album released"
   album["year released"] = gets.chomp
 
   while editing != false
     puts ""
+    puts "— "*21
     puts "Here's the album as entered so far:"
     puts ""
 
@@ -138,30 +140,37 @@ def create_album(db)
     puts ""
 
     # puts "To add the album as-is, type 'add'. Or, type the number of the info you want to edit. otherwise type 'q' to quit without saving."
-    puts "Type 'add' to save the album as shown"
+    puts "--> Type [ 'add' ] to save the album as shown"
+    puts "--> Type the [ # ] of a detail to update"
+    puts "--> Type [ 'q' ] to quit without saving"
     puts ""
-    puts "OR:"
     puts ""
-    puts "Type the number of the detail you would like to edit"
-    puts "Type 'q' to quit the album adder without saving"
-
     answer = gets.chomp.downcase
     case answer
     when '0'
+      puts ""
       puts "What is the name of this album?"
+      puts ""
       album["album name"] = gets.chomp
     when '1'
+      puts ""
       puts "Which artist is this album by?"
+      puts ""
       album["artist"] = gets.chomp
     when '2'
+      puts ""
       puts "What genre is this album?"
+      puts ""
       album["genre"] = gets.chomp
     when '3'
+      puts ""
       puts "What year was this album released?"
+      puts ""
       album["year released"] = gets.chomp
     when 'add'
       add_album(db, album["album name"], album["artist"], album["genre"], album["year released"])
       editing = false
+      puts "Album Added!"
     when 'q'
       editing = false
     end
@@ -229,6 +238,9 @@ def edit_album(db, first_hash, get_albums)
     puts "Sorry, but you can\'t change history!"
   when 'x'
     db.execute("DELETE FROM albums WHERE id= \'#{album_id}\'")
+    puts ""
+    puts "Album Removed! (╯°□°)╯︵ ♪♫"
+    puts ""
   else
     puts Faker::ChuckNorris.fact
   end

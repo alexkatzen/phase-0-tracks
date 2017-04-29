@@ -24,9 +24,6 @@ SQL
 
 db.execute(create_albums_table)
 
-# add a test album
-# db.execute( "INSERT INTO albums(album_name, artist, genre, year_released, date_added) VALUES ('Still Waters Run Deep', 'FourTops', 'Soul', 1970, 1231231)" )
-
 # Method to add an album
 def add_album(db, album_name, artist, genre, year_released)
   date_added = Time.new.to_s[0..18]
@@ -180,10 +177,12 @@ end
 
 # Create a method for editing an album
 def edit_album(db, first_hash, get_albums)
+
+  # List all the albums in the db
   album_heading(first_hash)
   get_albums = get_current_albums(db)
   list_albums(get_albums)
-  # List all the albums in the db
+
   # Ask the user to enter the id of the album they would like to edit
   puts "— "*21
   puts "Please enter the id of the album you want to edit"
@@ -244,13 +243,7 @@ def edit_album(db, first_hash, get_albums)
   else
     puts Faker::ChuckNorris.fact
   end
-  # Show the user just that album
 end
-
-
-# album.keys.each_with_index do |info, index|
-#   puts "#{index} - #{info.upcase}... #{album[info]}"
-# end
 
 # DRIVER CODE:
 puts ""

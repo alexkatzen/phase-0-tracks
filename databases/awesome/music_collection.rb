@@ -57,7 +57,7 @@ def album_heading(hash)
 
     # Iterate through each character in that key
     key.each_char do |c|
-      heading += c
+      heading += c.upcase
       spaces_left -=1
     end
 
@@ -67,27 +67,43 @@ def album_heading(hash)
       spaces_left -=1
     end
   end
-  return heading
+  puts heading
 end
 
-puts album_heading(first_hash)
 
-# Create a method that takes in an array (takes in the array of hashes)
+
+# Method that lists albums
 def list_albums(arr)
-# For each hash in the array
-  # Iterate through the hash (each album):
-    # Create a variable to hold the row string
-    #row = ""
-    # For each key, value in the hash:
-      # row += "|"
-      # Set a counter to keep track of spaces left
-      # Iterate through each character in the key's value
-        # add the character to the row string
-        # subtract 1 from the counter
-      # Add spaces remaining in counter
-    # Return the row
+
+  # For each hash in the array
+  arr.each do |album_hash|
+
+    # Create an empty row
+    row = ""
+
+    #iterate through each value in the hash creating a column each time
+    album_hash.each_value do |value|
+
+      spaces_left = 24
+      row += "| "
+
+      value.to_s.each_char do |c|
+        row += c
+        spaces_left -=1
+      end
+      while spaces_left > 0
+        row += " "
+        spaces_left -=1
+      end
+
+    end # end hash iteration
+
+    puts row
+  end # end array iteration
 end
 
+album_heading(first_hash)
+list_albums(get_albums)
 
 # Method to create an album
 def create_album(db)

@@ -248,9 +248,9 @@ loop do
   puts "— "*21
   puts "What would you like to do?"
   puts ""
-  puts "type '1' to view your albums"
-  puts "type '2' to add an album"
-  puts "type '3' to edit an album"
+  puts "type '1' to VIEW your albums"
+  puts "type '2' to ADD an album"
+  puts "type '3' to EDIT an album"
 
   answer = gets.chomp
   case answer

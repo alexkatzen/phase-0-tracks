@@ -225,7 +225,7 @@ def edit_album(db, first_hash, get_albums)
     answer = gets.chomp
     db.execute("UPDATE albums SET genre= \'#{answer}\' WHERE id= \'#{album_id}\'")
     puts ""
-    puts "Album name updated!"
+    puts "Genre updated!"
   when '4'
     puts ""
     puts "What year was this album released?"

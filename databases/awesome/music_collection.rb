@@ -10,7 +10,7 @@ db = SQLite3::Database.new("music.db")
 # setting an instance attribute method on our database instance to return hashes when queried (ORM)
 db.results_as_hash = true
 
-# create a table to hold albums
+# Create a table to hold albums
 create_albums_table = <<-SQL
   CREATE TABLE IF NOT EXISTS albums(
     id INTEGER PRIMARY KEY,
@@ -24,13 +24,13 @@ SQL
 
 db.execute(create_albums_table)
 
-# Method to add an album
+# Method to write an album to the db
 def add_album(db, album_name, artist, genre, year_released)
   date_added = Time.new.to_s[0..18]
   db.execute("INSERT INTO albums(album_name, artist, genre, year_released, date_added) VALUES (?, ?, ?, ?, ?)", [album_name, artist, genre, year_released, date_added])
 end
 
-# Create a function to get current albums
+# Method to get current albums in the db
 def get_current_albums(db)
   get_albums = db.execute("SELECT * FROM albums")
   # Clean up each of the hashes returned
@@ -42,14 +42,12 @@ end
 
 get_albums = get_current_albums(db)
 
-
 # Get the first hash to pass into the heading method
 first_hash = get_albums[0]
 
-# Method to make a heading
+# method to make a heading
 def album_heading(hash)
 
-  # create a variable to hold the heading string
   heading = ""
 
   # For each Key in the hash:
@@ -57,27 +55,27 @@ def album_heading(hash)
     heading += "| "
     spaces_left = 24
 
-    # Iterate through each character in that key
+    # Iterate through each character
     key.each_char do |c|
       heading += c.upcase
       spaces_left -=1
     end
 
-    # Add spaces remaining in counter
+    # Add remaining spaces in row
     while spaces_left > 0
       heading += " "
       spaces_left -=1
     end
   end
+
   puts heading
   puts ""
 end
 
-# Method to print album details as a row
+# method to print ONE album as a row
 def make_album_row(hsh)
-  # Create an empty row
-  row = ""
 
+  row = ""
   #iterate through each value in the hash creating a column each time
   hsh.each_value do |value|
 
@@ -97,7 +95,7 @@ def make_album_row(hsh)
   puts row
 end
 
-# Method that lists albums
+# method to print ALL albums
 def list_albums(arr)
   # For each hash in the array
   arr.each do |album_hash|
@@ -105,7 +103,7 @@ def list_albums(arr)
   end # end array iteration
 end
 
-# Method to create an album
+# method to CREATE an album
 def create_album(db)
 
   editing = true
@@ -172,10 +170,9 @@ def create_album(db)
       editing = false
     end
   end # end loop
-
 end
 
-# Create a method for editing an album
+# method to EDIT an album
 def edit_album(db, first_hash, get_albums)
 
   # List all the albums in the db
@@ -187,7 +184,7 @@ def edit_album(db, first_hash, get_albums)
   puts "— "*21
   puts "Please enter the id of the album you want to edit"
   album_id = gets.chomp.to_i
-  selected_album = db.execute("SELECT * FROM albums WHERE id = #{album_id}")
+  selected_album = db.execute("SELECT * FROM albums WHERE id = ?", [album_id])
   selected_album[0].keep_if{|key, value| key.class == String}
   puts ""
   puts "Here's your album:"
@@ -207,36 +204,36 @@ def edit_album(db, first_hash, get_albums)
   when '1'
     puts ""
     puts "What is the name of this album?"
-    answer = gets.chomp
-    db.execute("UPDATE albums SET album_name= \'#{answer}\' WHERE id= \'#{album_id}\'")
+    answer = gets.chompgi
+    db.execute("UPDATE albums SET album_name=? WHERE id=?", [answer, album_id])
     puts ""
     puts "Album name updated!"
   when '2'
     puts ""
     puts "Which artist is this album by?"
     answer = gets.chomp
-    db.execute("UPDATE albums SET artist= \'#{answer}\' WHERE id= \'#{album_id}\'")
+    db.execute("UPDATE albums SET artist=? WHERE id=?", [answer, album_id])
     puts ""
     puts "Artist updated!"
   when '3'
     puts ""
     puts "What genre is this album?"
     answer = gets.chomp
-    db.execute("UPDATE albums SET genre= \'#{answer}\' WHERE id= \'#{album_id}\'")
+    db.execute("UPDATE albums SET genre=? WHERE id=?", [answer, album_id])
     puts ""
     puts "Genre updated!"
   when '4'
     puts ""
     puts "What year was this album released?"
     answer = gets.chomp
-    db.execute("UPDATE albums SET year_released= \'#{answer}\' WHERE id= \'#{album_id}\'")
+    db.execute("UPDATE albums SET year_released=? WHERE id=?", [answer, album_id])
     puts ""
     puts "Release date updated!"
   when '5'
     puts ""
     puts "Sorry, but you can\'t change history!"
   when 'x'
-    db.execute("DELETE FROM albums WHERE id= \'#{album_id}\'")
+    db.execute("DELETE FROM albums WHERE id=?", [album_id])
     puts ""
     puts "Album Removed! (╯°□°)╯︵ ♪♫"
     puts ""

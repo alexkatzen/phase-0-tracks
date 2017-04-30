@@ -204,36 +204,36 @@ def edit_album(db, first_hash, get_albums)
   when '1'
     puts ""
     puts "What is the name of this album?"
-    answer = gets.chomp
-    db.execute("UPDATE albums SET album_name= \'#{answer}\' WHERE id= \'#{album_id}\'")
+    answer = gets.chompgi
+    db.execute("UPDATE albums SET album_name=? WHERE id=?", [answer, album_id])
     puts ""
     puts "Album name updated!"
   when '2'
     puts ""
     puts "Which artist is this album by?"
     answer = gets.chomp
-    db.execute("UPDATE albums SET artist= \'#{answer}\' WHERE id= \'#{album_id}\'")
+    db.execute("UPDATE albums SET artist=? WHERE id=?", [answer, album_id])
     puts ""
     puts "Artist updated!"
   when '3'
     puts ""
     puts "What genre is this album?"
     answer = gets.chomp
-    db.execute("UPDATE albums SET genre= \'#{answer}\' WHERE id= \'#{album_id}\'")
+    db.execute("UPDATE albums SET genre=? WHERE id=?", [answer, album_id])
     puts ""
     puts "Genre updated!"
   when '4'
     puts ""
     puts "What year was this album released?"
     answer = gets.chomp
-    db.execute("UPDATE albums SET year_released= \'#{answer}\' WHERE id= \'#{album_id}\'")
+    db.execute("UPDATE albums SET year_released=? WHERE id=?", [answer, album_id])
     puts ""
     puts "Release date updated!"
   when '5'
     puts ""
     puts "Sorry, but you can\'t change history!"
   when 'x'
-    db.execute("DELETE FROM albums WHERE id= \'#{album_id}\'")
+    db.execute("DELETE FROM albums WHERE id=?", [album_id])
     puts ""
     puts "Album Removed! (╯°□°)╯︵ ♪♫"
     puts ""

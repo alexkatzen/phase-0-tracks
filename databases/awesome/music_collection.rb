@@ -184,7 +184,7 @@ def edit_album(db, first_hash, get_albums)
   puts "— "*21
   puts "Please enter the id of the album you want to edit"
   album_id = gets.chomp.to_i
-  selected_album = db.execute("SELECT * FROM albums WHERE id = #{album_id}")
+  selected_album = db.execute("SELECT * FROM albums WHERE id = ?", [album_id])
   selected_album[0].keep_if{|key, value| key.class == String}
   puts ""
   puts "Here's your album:"

@@ -47,3 +47,37 @@ Server is aware that it has encountered an error or otherwise incapable of perfo
   * **500 -- Internal Server Error** : Generic error message, given when an unexpected condition was encountered and no other information is available.
   * **503 -- Service Unavailable** : The web server is unavailable due to some circumstance e.g. it is restarting or in the middle of doing something (like down for maintenance)
   * **504 -- Gateway Timeout** : Indicates a proxy server timed out when trying to communicate with a secondary server.
+
+---
+
+### What is the difference between a GET request and a POST request? When might each be used?
+
+The basic difference is in what they are typically used for:
+  * **GET** Requests data from a specified resource. **For retrieving data.**
+  * **POST** Submits data to be processed to a specified resource. ** For writing data.**
+
+More detail:
+  * **Both** convey data to the server
+
+**GET**
+  * Default method for forms.
+  * Data is sent via the URL, meaning there are restrictions on length of the data sent.
+  * Not as secure / does not encrypt information.
+  * Can be cached.
+
+**POST**
+  * Data not encrypted, but is hidden from view.
+  * Data sent in separate header file (vs in the URL).
+  * NOT cached.
+  * No restriction on data type.
+
+---
+
+### What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
+
+Cookies are small pieces of data sent by the server and saved in the client in order to manage stateful information, primarily: 
+  * Session management (e.g. user login, shopping carts)
+  * User preferences
+  * Tracking (e.g. analytics)
+
+ When a HTTP requests is received, the server can optionally set a cookie by sending a Set-Cookie header with the response. From that point on, the cookie's value is sent alongside HTTP requests that are made to the same server. 

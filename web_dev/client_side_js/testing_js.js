@@ -15,18 +15,47 @@ for (var i=0; i<el.length; i++) {
   el[i].style.fontFamily = "Helvetica";
 }
 
-// Creating the p element
-var paragraph1 = document.createElement("p");
+// // Creating the p element
+// var paragraph1 = document.createElement("p");
 
-// Creating the text content
-var paraText = document.createTextNode("Inserting a new element into the page");
+// // Creating the text content
+// var paraText = document.createTextNode("Inserting a new element into the page");
 
-// Appending the text content to the p element
-paragraph1.appendChild(paraText);
+// // Appending the text content to the p element
+// paragraph1.appendChild(paraText);
 
-// Selecting the div element by ID
-var element = document.getElementById('newDiv');
+// // Selecting the div element by ID
+// var element = document.getElementById('newDiv');
 
 
-// Appending the child element to the Div
-element.appendChild(paragraph1);
+// // Appending the child element to the Div
+// element.appendChild(paragraph1);
+
+
+function insert_Element() {
+  // Creating the p element
+  var paragraph1 = document.createElement("p");
+
+  // Creating the text content
+  var paraText = document.createTextNode("Inserting a new element into the page");
+
+  // Appending the text content to the p element
+  paragraph1.appendChild(paraText);
+
+  // Selecting the div element by ID
+  var element = document.getElementById('newDiv');
+
+  // Appending the child element to the Div
+  element.appendChild(paragraph1);
+}
+
+
+function delete_Element() {
+  var element = document.getElementById('newDiv');
+  var child = document.getElementsByTagName('p');
+  element.removeChild(child[1]);
+}
+
+var header2 = document.getElementsByTagName("h2");
+header2[0].addEventListener("click", insert_Element);
+header2[1].addEventListener("click", delete_Element);

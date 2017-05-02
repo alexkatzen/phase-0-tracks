@@ -7,7 +7,7 @@
   * Powerful/complete control -- anyone with the know-how can wield it's full capabilities.
   * Stability, ability to run many processes at the same time.
   * Highly configurable, down to the kernel.
-  * Hardware - runs/can be configured to run on just about any computer 
+  * Hardware - runs/can be configured to run on just about any computer.
 
 ---
 

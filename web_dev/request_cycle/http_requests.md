@@ -45,7 +45,7 @@ Intended for situations in which the **client** seems to have erred. (E.g. Reque
 Server is aware that it has encountered an error or otherwise incapable of performing the request.
 
   * **500 -- Internal Server Error** : Generic error message, given when an unexpected condition was encountered and no other information is available.
-  * **503 -- Service Unavailable** : The web server is unavailable due to some circumstance e.g. it is restarting or in the middle of doing something (like down for maintenance)
+  * **503 -- Service Unavailable** : The web server is unavailable due to some circumstance e.g. it is restarting or in the middle of doing something (like down for maintenance).
   * **504 -- Gateway Timeout** : Indicates a proxy server timed out when trying to communicate with a secondary server.
 
 ---
@@ -57,7 +57,7 @@ The basic difference is in what they are typically used for:
   * **POST** Submits data to be processed to a specified resource. ** For writing data.**
 
 More detail:
-  * **Both** convey data to the server
+  * **Both** convey data to the server.
 
 **GET**
   * Default method for forms.
@@ -76,8 +76,8 @@ More detail:
 ### What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
 
 Cookies are small pieces of data sent by the server and saved in the client in order to manage stateful information, primarily: 
-  * Session management (e.g. user login, shopping carts)
-  * User preferences
-  * Tracking (e.g. analytics)
+  * Session management (e.g. user login, shopping carts).
+  * User preferences.
+  * Tracking (e.g. analytics).
 
  When a HTTP requests is received, the server can optionally set a cookie by sending a Set-Cookie header with the response. From that point on, the cookie's value is sent alongside HTTP requests that are made to the same server. 

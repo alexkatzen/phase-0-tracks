@@ -9,12 +9,24 @@
   <script>
   $(document).ready(function(){
 
+    $("h1").hide();
+
     $(".foo-button").click(function(){
-      $("h1").fadeToggle();
+      $("h1").slideToggle();
     });
 
     $("#stronger").click(function(){
       $("h1").toggleClass("bold");
+    });
+
+    $("#creative").mouseenter(function(){
+      $("body").addClass("gradient");
+      $("h1").addClass("white");
+    });
+
+    $("#creative").mouseleave(function(){
+      $("body").removeClass("gradient");
+      $("h1").removeClass("white");
     });
 
   });

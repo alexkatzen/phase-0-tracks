@@ -10,6 +10,21 @@ body {
   margin: 0 auto;
 }
 
+.gradient {
+  background: rgba(151,105,250,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(151,105,250,1) 0%, rgba(24,32,173,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(151,105,250,1)), color-stop(100%, rgba(24,32,173,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(151,105,250,1) 0%, rgba(24,32,173,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(151,105,250,1) 0%, rgba(24,32,173,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(151,105,250,1) 0%, rgba(24,32,173,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(151,105,250,1) 0%, rgba(24,32,173,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9769fa', endColorstr='#1820ad', GradientType=1 );
+}
+
+.white {
+  color: white;
+}
+
 h1 {
   color: gray;
   text-align: center;
@@ -40,8 +55,6 @@ h1 {
   margin: 0 auto;
 }
 
-
-
 #stronger {
   color: white;
 }
@@ -49,11 +62,3 @@ h1 {
 #creative {
   color: cyan;
 }
-
-/*#break {
-  color: red;
-}
-
-#define {
-  color: yellow;
-}*/

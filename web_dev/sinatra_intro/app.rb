@@ -52,7 +52,10 @@ get '/contact' do
   "Contact us:<br>4 Goldfield Rd. <br> Honolulu, Hi 96815"
 end
 
-# write a GET route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job!"
+# write a GET route that can take a person's
+# name as a query parameter (not a route parameter)
+# and say "Good job, [person's name]!". If the query
+# parameter is not present, the route simply says "Good job!"
 
 get '/great_job/' do
   name = params[:name]
@@ -63,11 +66,24 @@ get '/great_job/' do
   end
 end
 
-# A route that uses route parameters to add two numbers and respond with the result. The data types are tricky here -- when will the data need to be (or arrive as) a string?
+# A route that uses route parameters to add two numbers
+# and respond with the result. The data types are tricky
+# here -- when will the data need to be (or arrive as) a string?
 
 get '/first/:first/second/:second' do
   firstnumber = params[:first].to_i
   secondnumber = params[:second].to_i
   result = (firstnumber + secondnumber)
   "The result is #{result}."
+end
+
+# A route that responds with all students over a certain age
+
+get '/olderthan/:age' do
+  response = ""
+  olderstudents = db.execute("SELECT * FROM students WHERE age > ?", [params[:age]])
+  olderstudents.each do |oldstudent|
+    response << "#{oldstudent['name']} is #{oldstudent['age']} <br>"
+  end
+  response
 end

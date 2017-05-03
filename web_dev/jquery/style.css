@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  background-color: #202226;
+  font-family: "Montserrat"
+}
+
+.container {
+  width: 80%;
+  height: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: gray;
+  text-align: center;
+  position: relative;
+  margin: 0;
+  font-size: 4em;
+  font-weight: 300;
+  line-height: 1.6em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bold {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 5em;
+  line-height: 1.1em;
+}
+
+.foo-button {
+  width: 100px;
+  border: 1px solid #ff00ff;
+  color: #ff00ff;
+  height: 40px;
+  border-radius: 3px;
+  padding-top: 14px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+#stronger {
+  color: white;
+}
+
+#creative {
+  color: cyan;
+}
+
+/*#break {
+  color: red;
+}
+
+#define {
+  color: yellow;
+}*/

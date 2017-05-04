@@ -13,6 +13,13 @@ get '/' do
   erb :home
 end
 
+# show sf students on the sf_campus page.
+get '/sf_campus' do
+  @students = db.execute("SELECT * FROM students WHERE campus='SF'")
+  erb :sf_campus
+end
+
+
 get '/students/new' do
   erb :new_student
 end

@@ -7,7 +7,7 @@ set :public_folder, File.dirname(__FILE__) + '/static'
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
-# Create a for campuses
+# SQL command to create a table for campuses
 create_campuses = <<-SQL
   CREATE TABLE IF NOT EXISTS campuses(
     id INTEGER PRIMARY KEY,
@@ -15,6 +15,7 @@ create_campuses = <<-SQL
   )
 SQL
 
+# Create the table
 db.execute(create_campuses)
 
 # show campuses
@@ -42,13 +43,11 @@ get '/sf_campus' do
   erb :sf_campus
 end
 
-
 get '/students/new' do
   erb :new_student
 end
 
-# create new students via
-# a form
+# create new students via a form
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
   redirect '/'
